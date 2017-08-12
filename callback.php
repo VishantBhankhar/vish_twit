@@ -5,7 +5,7 @@ $auth = new auth($client);
 
 if($auth->signedIn())
 {
-    header('Location: index.app');
+    header('Location: index.php');
 }
 else{
     die('Sign in failed');
