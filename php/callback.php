@@ -1,5 +1,5 @@
 <?php
-require_once 'app/init.php';
+require_once 'php/init.php';
 /**
  *
  * Created by PhpStorm.
