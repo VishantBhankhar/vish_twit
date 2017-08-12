@@ -3,7 +3,7 @@ require_once 'app/init.php';
 
 $auth = new auth($client);
 
-if($auth->signedIn())
+if($auth->signIn())
 {
     header('Location: index.php');
 }
