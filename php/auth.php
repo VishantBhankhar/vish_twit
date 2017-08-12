@@ -16,6 +16,11 @@ class auth{
         return $this->client->oauth_authenticate();
     }
 
+    public function signedIn()
+    {
+        return false;
+    }
+
     protected function requestTokens()
     {
         $reply=$this->client->oauth_requestToken([
