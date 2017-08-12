@@ -2,7 +2,7 @@
 
 class auth{
     protected  $client;
-    protected $clientCallback = 'https://vishtwit.herokuapp.com/php/callback.php';
+    protected $clientCallback = 'https://vishtwit.herokuapp.com/app/callback.app';
 
     public function __construct(\Codebird\Codebird $client)
     {
