@@ -20,7 +20,7 @@ class auth{
            'oauth_callback' => $this->clientCallback
         ]);
 
-        var var_dump($reply);
+        var_dump($reply);
     }
 
 }
