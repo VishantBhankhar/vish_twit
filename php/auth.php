@@ -12,6 +12,8 @@ class auth{
     public function getAuthUrl()
     {
         $this->requestTokens();
+        $this->varifyTokens();
+        return $this->client->oauth_authenticate();
     }
 
     protected function requestTokens()
@@ -19,8 +21,18 @@ class auth{
         $reply=$this->client->oauth_requestToken([
            'oauth_callback' => $this->clientCallback
         ]);
+        $this->storeTokens($reply->oauth_token, $reply->oauth_token_secret);
+    }
 
-        var_dump($reply);
+    protected function storeTokens($token ,$tokenSecret)
+    {
+        $_SESSION['oauth_token']= $token;
+        $_SESSION['oauth_token_secret']= $tokenSecret;
+    }
+
+    protected function varifyTokens()
+    {
+        $this->client->setToken($_SESSION['oauth_token'],$_SESSION['oauth_token_secret']);
     }
 
 }
