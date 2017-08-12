@@ -18,7 +18,7 @@ class auth{
 
     public function signedIn()
     {
-        return false;
+        return isset($_SESSION['user_id']);
     }
 
     public function signIn()
@@ -26,7 +26,17 @@ class auth{
         if($this->hasCallBack())
         {
             $this->varifyTokens();
-            return true;
+
+            $reply=$this->client->oauth_accessToken([
+                'oauth_verifier' => $_GET['oauth_verifier']
+            ]);
+            if($reply->httpstatus === 200)
+            {
+                $this->storeTokens($reply->oauth_token, $reply->oauth_token_secret);
+                $_SESSION['user_id']=$reply->user_id;
+                return true;
+            }
+
         }
         return false;
     }
