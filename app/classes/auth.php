@@ -41,6 +41,11 @@ class auth{
         return false;
     }
 
+    public function signOut()
+    {
+        unset($_SESSION['user_id']);
+    }
+
     protected function hasCallBack()
     {
         return isset($_GET['oauth_verifier']);
