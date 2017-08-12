@@ -21,6 +21,21 @@ class auth{
         return false;
     }
 
+    public function signIn()
+    {
+        if($this->hasCallBack())
+        {
+            $this->varifyTokens();
+            return true;
+        }
+        return false;
+    }
+
+    protected function hasCallBack()
+    {
+        return isset($_GET['oauth_verifier']);
+    }
+
     protected function requestTokens()
     {
         $reply=$this->client->oauth_requestToken([
