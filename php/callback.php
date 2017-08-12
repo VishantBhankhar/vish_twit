@@ -1,5 +1,5 @@
 <?php
-echo 'in callback';
+require_once 'app/init.php';
 /**
  *
  * Created by PhpStorm.
