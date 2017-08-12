@@ -1,7 +1,6 @@
 <?php
 echo "hello";
-$version=phpversion();
-print $version;
+
 /**
  * Created by PhpStorm.
  * User: V_the_K!nG
