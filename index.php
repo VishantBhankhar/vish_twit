@@ -8,9 +8,8 @@ $auth = new auth($client);
 <?php if($auth->signedIn()): ?>
     <p>You are signed in.</p>
     <?php
-    $auth->setToken($_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
-
-    $reply = (array) $auth->statuses_homeTimeline();
+    $this->client->setToken($_SESSION['oauth_token'],$_SESSION['oauth_token_secret']);
+    $reply = (array) $client->statuses_homeTimeline();
     print_r($reply);
     ?>
     <p><a href="signout.php">Sign out</a> </p>
