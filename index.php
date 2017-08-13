@@ -11,17 +11,26 @@ $auth = new auth($client);
     $client->setToken($_SESSION['oauth_token'],$_SESSION['oauth_token_secret']);
    // $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
     $reply = (array) $client->statuses_homeTimeline();
-    print "<pre>";
-    print_r($reply);
-    print "</pre>";
+   // print "<pre>";
+   // print_r($reply);
+   // print "</pre>";
 
     echo "<br>";
     //echo $_SESSION['user_id'];
+    $count=0;
     foreach ($reply as $value) {
-        echo $value->user->name;
-        echo '@'.$value->user->screen_name;
-        echo $value->text;
-        echo "<br>";
+        $count++;
+        if($count>10)
+        {
+            break;
+        }
+        else{
+            echo $value->user->name;
+            echo '@'.$value->user->screen_name;
+            echo $value->text;
+            echo "<br>";
+        }
+
     };
     ?>
     <p><a href="signout.php">Sign out</a> </p>
