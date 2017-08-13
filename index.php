@@ -10,7 +10,7 @@ $auth = new auth($client);
     <?php
     $client->setToken($_SESSION['oauth_token'],$_SESSION['oauth_token_secret']);
    // $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
-    $reply = (array) $client->statuses_homeTimeline();
+    $twit = (array) $client->statuses_homeTimeline();
    // print "<pre>";
    // print_r($reply);
    // print "</pre>";
@@ -18,7 +18,7 @@ $auth = new auth($client);
     echo "<br>";
     //echo $_SESSION['user_id'];
     $count=0;
-    foreach ($reply as $value) {
+    foreach ($twit as $value) {
         $count++;
         if($count>10)
         {
@@ -32,7 +32,7 @@ $auth = new auth($client);
         }
 
     };
-    $friend=$_GET['GET https://api.twitter.com/1.1/friends/list.json?cursor=-1&screen_name=twitterapi&skip_status=true&include_user_entities=false'];
+    $friend =(array) $client->followers_list();
     print_r($friend);
     ?>
     <p><a href="signout.php">Sign out</a> </p>
