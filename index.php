@@ -33,10 +33,11 @@ $auth = new auth($client);
 
     };
     $friend =(array) $client->followers_list();
-    //print "<pre>";
-    //print_r($friend);
-    //print "</pre>";
-    $count=0;
+    $friend=$friend->user;
+    print "<pre>";
+    print_r($friend);
+    print "</pre>";
+    /*$count=0;
     foreach ($friend->users as $value) {
         $count++;
         if($count>10)
@@ -49,7 +50,7 @@ $auth = new auth($client);
             echo "<br>";
         }
 
-    };
+    };*/
 
     ?>
     <p><a href="signout.php">Sign out</a> </p>
