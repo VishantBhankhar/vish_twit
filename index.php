@@ -58,7 +58,7 @@ $auth = new auth($client);
         };
     };
     //print_r($arr);
-    $check = $client->search_tweets('t=Twitter', true);
+    $check =(array) $client->search_tweets('t=Twitter', true);
     echo $check;
     ?>
 
