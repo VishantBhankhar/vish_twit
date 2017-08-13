@@ -33,7 +33,9 @@ $auth = new auth($client);
 
     };
     $friend =(array) $client->followers_list();
+    print "<pre>";
     print_r($friend);
+    print "</pre>";
     ?>
     <p><a href="signout.php">Sign out</a> </p>
 <?php else : ?>
