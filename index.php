@@ -9,7 +9,7 @@ $auth = new auth($client);
     <p>You are signed in.</p>
     <?php
     $client->setToken($_SESSION['oauth_token'],$_SESSION['oauth_token_secret']);
-    $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
+   // $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
     $reply = (array) $client->statuses_homeTimeline();
     print_r($reply);
     foreach ($reply as $value) {
