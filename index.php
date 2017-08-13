@@ -25,11 +25,14 @@ $auth = new auth($client);
    // print_r($reply);
    // print "</pre>";
     $profile=(array)$client->users_profileBanner();
-    echo($profile);
-    echo $_SESSION['oauth_token'].$_SESSION['oauth_token_secret'];
+    print "<pre>";
+    print_r($profile);
+    print "</pre>";
+    //echo $_SESSION['oauth_token'].$_SESSION['oauth_token_secret'];
     echo "<br>";
     //echo $_SESSION['user_id'];
     $count=0;
+
     foreach ($twit as $value) {
         $count++;
         if($count>10)
