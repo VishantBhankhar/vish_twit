@@ -69,7 +69,9 @@ $auth = new auth($client);
     <p><a href="signout.php">Sign out</a> </p>
 <?php else : ?>
     <div id="twit" class="fa fa-twitter">
-        <button class="btn btn-info" onclick="<?php echo $auth->getAuthUrl();?>">Sign In</button>
+        <div class="link">
+            <button class="btn btn-info" onclick="<?php echo $auth->getAuthUrl();?>">Sign In</button>
+        </div>
     </div>
 <?php endif; ?>
 

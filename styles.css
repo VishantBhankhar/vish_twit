@@ -1,12 +1,13 @@
 #twit{
-    left: 50%;
+    margin-left: 50%;
 }
 .fa {
     padding: 20px;
     font-size: 30px;
-    width: 50px;
+    width: 30px;
     text-align: center;
     text-decoration: none;
+    border-radius: 50%;
 }
 .fa-twitter {
     background: #55ACEE;
