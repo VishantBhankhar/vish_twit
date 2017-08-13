@@ -11,7 +11,8 @@ $auth = new auth($client);
     $client->setToken($_SESSION['oauth_token'],$_SESSION['oauth_token_secret']);
    // $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
     $reply = (array) $client->statuses_homeTimeline();
-    print_r($reply);
+    //print_r($reply);
+    echo $_SESSION['user_id'];
     foreach ($reply as $value) {
         echo $value->text;
         echo "<br>";
