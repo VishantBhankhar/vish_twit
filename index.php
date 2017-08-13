@@ -54,7 +54,7 @@ $auth = new auth($client);
                // array_push($arr,$value->name);
                 $client->setToken($value->id,$value->screen_name);
                 // $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
-                $freiendinfo = (array) $client->statuses_homeTimeline();
+                $friendinfo = (array) $client->statuses_homeTimeline();
                 print "<pre>";
                 print_r($friendinfo);
                 print "</pre>";
