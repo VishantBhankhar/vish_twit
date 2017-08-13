@@ -21,18 +21,14 @@ $auth = new auth($client);
     $client->setToken($_SESSION['oauth_token'],$_SESSION['oauth_token_secret']);
    // $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
     $twit = (array) $client->statuses_homeTimeline();
-   // print "<pre>";
-   // print_r($reply);
-   // print "</pre>";
-    $profile=(array)$client->users_profileImage_SCREEN_NAME($_SESSION['user_id']);
-    print "<pre>";
-    print_r ($profile);
-    print "</pre>";
-    //echo $_SESSION['oauth_token'].$_SESSION['oauth_token_secret'];
-    echo "<br>";
-    //echo $_SESSION['user_id'];
-    $count=0;
+   print "<pre>";
+   print_r($reply);
+   print "</pre>";
 
+    echo "<br>";
+
+    $count=0;
+    echo 'mytweets';
     foreach ($twit as $value) {
         $count++;
         if($count>10)
@@ -40,10 +36,13 @@ $auth = new auth($client);
             break;
         }
         else{
-            echo $value->user->name;
-            echo '@'.$value->user->screen_name;
-            echo $value->text;
-            echo "<br>";
+            if($value->id==$_SESSION['user_id'])
+            {
+
+                echo $value->text;
+                echo "<br>";
+            }
+
         }
 
     };
