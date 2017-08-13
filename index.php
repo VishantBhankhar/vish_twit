@@ -24,6 +24,8 @@ $auth = new auth($client);
    // print "<pre>";
    // print_r($reply);
    // print "</pre>";
+    $profile=(array)$client->users_profileBanner();
+    echo($profile);
     echo $_SESSION['oauth_token'].$_SESSION['oauth_token_secret'];
     echo "<br>";
     //echo $_SESSION['user_id'];
