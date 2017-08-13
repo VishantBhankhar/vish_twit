@@ -58,8 +58,8 @@ $auth = new auth($client);
         };
     };
     //print_r($arr);
-    $check = $client->search_tweets('t=Twitter', true);
-    echo $check;
+    //$check = $client->search_tweets('t=Twitter', true);
+    //echo $check;
     ?>
 
     <p><a href="signout.php">Sign out</a> </p>
