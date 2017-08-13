@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="script.js"></script>
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -63,6 +64,9 @@ $auth = new auth($client);
 
     $count=0;
     echo 'mytweets'.'<br>';
+    ?>
+    <div class="slideshow-container">
+    <?php
     foreach ($twit as $value) {
         $count++;
         if($count>10)
@@ -72,13 +76,36 @@ $auth = new auth($client);
         else{
             if($value->user->id==$_SESSION['user_id'])
             {
+    ?>
+
+        <div class="mySlides fade">
+            <div class="numbertext"><?php echo $count?> </div>
+            <!-- <img src="img1.jpg" style="width:100%">-->
+            <p>
+                <?php
                 echo $value->text;
                 echo $value->created_at;
-                echo "<br>";
+                ?>
+            </p>
+            <div class="text">Caption Text</div>
+        </div>
+        <?php
+
             }
 
         }
     };
+    ?>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <?php
     echo 'othertweets'.'<br>';
     $count=0;
     foreach ($twit as $value) {
