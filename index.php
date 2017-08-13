@@ -13,7 +13,7 @@ $auth = new auth($client);
     $reply = (array) $client->statuses_homeTimeline();
     print_r($reply);
     foreach ($reply as $value) {
-        echo $value->[text];
+        echo '$value->text';
         echo "<br>";
     };
     ?>
