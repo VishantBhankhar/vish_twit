@@ -33,9 +33,9 @@ $auth = new auth($client);
 
     };
     $friend =(array) $client->followers_list();
-    print "<pre>";
-    print_r($friend);
-    print "</pre>";
+    //print "<pre>";
+    //print_r($friend);
+    //print "</pre>";
     $count=0;
     foreach ($friend->users as $value) {
         $count++;
@@ -45,7 +45,7 @@ $auth = new auth($client);
         }
         else{
             echo $value->name;
-            echo '@'.$value->user->screen_name;
+            echo '@'.$value->screen_name;
             echo "<br>";
         }
 
