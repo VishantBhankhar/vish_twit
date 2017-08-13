@@ -80,7 +80,7 @@ $auth = new auth($client);
 
         <div class="mySlides fade">
             <div class="numbertext"><?php echo $count?> </div>
-             <img src="<?php echo $value->user->profile_background_image_url_https?>" style="width:100%">
+             <img src="<?php echo $value->user->profile_image_url?>" style="width:100%">
             <p>
                 <?php
                 echo $value->text.'<br>';
