@@ -37,9 +37,9 @@ $auth = new auth($client);
 
     };
     $friend =(array) $client->followers_list();
-    print "<pre>";
-    print_r($friend);
-    print "</pre>";
+    //print "<pre>";
+    //print_r($friend);
+    //print "</pre>";
     //$arr=array();
     $count=0;
     foreach($friend as $row => $innerArray) {
@@ -56,7 +56,7 @@ $auth = new auth($client);
                 // $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
                 $freiendinfo = (array) $client->statuses_homeTimeline();
                 print "<pre>";
-                print_r($friend);
+                print_r($friendinfo);
                 print "</pre>";
                 echo $value->name . "<br/>";
             }
