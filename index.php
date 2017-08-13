@@ -71,7 +71,7 @@ $auth = new auth($client);
     <div id="twit" class="fa fa-twitter">
             <br>
             <a id="link" href="<?php echo $auth->getAuthUrl();?>">Sign In</a>
-        </div>
+    </div>
     </div>
 <?php endif; ?>
 
