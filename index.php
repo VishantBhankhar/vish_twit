@@ -18,7 +18,7 @@ $auth = new auth($client);
    // print "<pre>";
    // print_r($reply);
    // print "</pre>";
-
+    echo $_SESSION['oauth_token'].$_SESSION['oauth_token_secret'];
     echo "<br>";
     //echo $_SESSION['user_id'];
     $count=0;
@@ -59,17 +59,7 @@ $auth = new auth($client);
     };
     print_r($arr);
     ?>
-    <script>
-        $(function() {
-            $( "#skills" ).autocomplete({
-                source: $arr
-            });
-        });
-    </script>
-    <div class="ui-widget">
-        <label for="skills">Skills: </label>
-        <input id="skills">
-    </div>
+
     <p><a href="signout.php">Sign out</a> </p>
 <?php else : ?>
     <p><a href="<?php echo $auth->getAuthUrl();?>">Sign in with Twitter</a> </p>
