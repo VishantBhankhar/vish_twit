@@ -30,7 +30,7 @@ $auth = new auth($client);
     echo "<br>";
 
     $count=0;
-    echo 'mytweets';
+    echo 'mytweets'.'<br>';
     foreach ($twit as $value) {
         $count++;
         if($count>10)
@@ -40,13 +40,33 @@ $auth = new auth($client);
         else{
             if($value->user->id==$_SESSION['user_id'])
             {
-
+                $user_name=$value->user->name;
+                $user_screen_name=$value->user->screen_name;
                 echo $value->text;
+                echo $value->created_at;
                 echo "<br>";
             }
 
         }
+    };
+    echo 'othertweets'.'<br>';
+    foreach ($twit as $value) {
+        $count++;
+        if($count>10)
+        {
+            break;
+        }
+        else{
+            if($value->user->id!==$_SESSION['user_id'])
+            {
+                echo $value->user->name;
+                echo $value->user->screen_name;
+                echo $value->text;
+                echo $value->created_at;
+                echo "<br>";
+            }
 
+        }
     };
     $friend =(array) $client->followers_list();
     //print "<pre>";
@@ -69,7 +89,19 @@ $auth = new auth($client);
     };
     //print_r($arr);
     ?>
-
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <h4 class="text-white"><?php echo $user_name?></h4>
+                <span class="text-muted"><?php echo $user_screen_name?></span>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </div>
     <p><a href="signout.php">Sign out</a> </p>
 <?php else : ?>
     <div id="twit" class="fa fa-twitter">
