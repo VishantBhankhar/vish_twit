@@ -83,8 +83,8 @@ $auth = new auth($client);
             <!-- <img src="img1.jpg" style="width:100%">-->
             <p>
                 <?php
-                echo $value->text;
-                echo $value->created_at;
+                echo $value->text.'<br>';
+                echo $value->created_at.'<br>';
                 ?>
             </p>
             <div class="text">Caption Text</div>

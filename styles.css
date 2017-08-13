@@ -27,6 +27,7 @@
 
 /* Slideshow container */
 .slideshow-container {
+    background-color: black;
     max-width: 1000px;
     position: relative;
     margin: auto;
