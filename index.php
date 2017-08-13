@@ -9,8 +9,9 @@ $auth = new auth($client);
     <p>You are signed in.</p>
     <?php
     $client->setToken($_SESSION['oauth_token'],$_SESSION['oauth_token_secret']);
+    $client->setReturnFormat(CODEBIRD_RETURNFORMAT_JSON);
     $reply = (array) $client->statuses_homeTimeline();
-    print($reply);
+    print_r($reply);
     ?>
     <p><a href="signout.php">Sign out</a> </p>
 <?php else : ?>
