@@ -11,7 +11,7 @@ $auth = new auth($client);
     $client->setToken($_SESSION['oauth_token'],$_SESSION['oauth_token_secret']);
     $client->setReturnFormat(CODEBIRD_RETURNFORMAT_JSON);
     $reply = (array) $client->statuses_homeTimeline();
-    foreach ($colors as $value) {
+    foreach ($reply as $value) {
         echo "$value->text <br>";
     };
     ?>
