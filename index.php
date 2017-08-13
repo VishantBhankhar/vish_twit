@@ -7,7 +7,7 @@ $auth = new auth($client);
 <?php if($auth->signedIn()): ?>
     <p>You are signed in.</p>
     <?php
-        $reply=(array)$auth->statuses_omeTimeline();
+        $reply=\Codebird\Codebird::statuses_homeTimeline();
         print_r($reply);
     ?>
     <p><a href="signout.php">Sign out</a> </p>
