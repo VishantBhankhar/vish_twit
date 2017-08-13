@@ -40,6 +40,7 @@ $auth = new auth($client);
                         <a class="dropdown-item" href="signout.php">Sign Out</a>
                     </div>
                 </span>
+                </span>
                 </div>
             </div>
         </div>
