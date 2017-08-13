@@ -1,6 +1,10 @@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <?php
 require_once 'vendor/autoload.php';
 require_once 'app/init.php';
+
 
 $auth = new auth($client);
 ?>
@@ -55,6 +59,17 @@ $auth = new auth($client);
     };
     print_r($arr);
     ?>
+    <script>
+        $(function() {
+            $( "#skills" ).autocomplete({
+                source: $arr
+            });
+        });
+    </script>
+    <div class="ui-widget">
+        <label for="skills">Skills: </label>
+        <input id="skills">
+    </div>
     <p><a href="signout.php">Sign out</a> </p>
 <?php else : ?>
     <p><a href="<?php echo $auth->getAuthUrl();?>">Sign in with Twitter</a> </p>
