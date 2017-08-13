@@ -56,9 +56,9 @@ $auth = new auth($client);
 
     //echo $_SESSION['user_id'];
 
-  // print "<pre>";
-   //print_r($twit);
-   //print "</pre>";
+  print "<pre>";
+  print_r($twit);
+   print "</pre>";
 
     //echo "<br>";
 
