@@ -33,13 +33,21 @@ $auth = new auth($client);
 
     };
     $friend =(array) $client->followers_list();
-    print "<pre>";
-    print_r($friend);
-    print "</pre>";
+    //print "<pre>";
+    //print_r($friend);
+    //print "</pre>";
     $count=0;
     foreach($friend as $row => $innerArray) {
         foreach ($innerArray as $innerRow => $value) {
-            echo $value->name . "<br/>";
+            if($count>10)
+            {
+                break;
+            }
+            else
+            {
+                echo $value->name . "<br/>";
+            }
+
         };
     };
 
