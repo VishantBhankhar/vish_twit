@@ -2,6 +2,7 @@
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="styles.css">
 <?php
 require_once 'vendor/autoload.php';
 require_once 'app/init.php';
@@ -63,7 +64,7 @@ $auth = new auth($client);
 
     <p><a href="signout.php">Sign out</a> </p>
 <?php else : ?>
-    <a href="#" class="fa fa-twitter"></a>
+    <div id="twit" class="fa fa-twitter"></div>
     <p><a href="<?php echo $auth->getAuthUrl();?>">Sign in with Twitter</a> </p>
 <?php endif; ?>
 
