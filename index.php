@@ -15,6 +15,8 @@ $auth = new auth($client);
     echo "<br>";
     //echo $_SESSION['user_id'];
     foreach ($reply as $value) {
+        echo $value->name;
+        echo '@'+$value->screen_name;
         echo $value->text;
         echo "<br>";
     };
