@@ -69,6 +69,7 @@ $auth = new auth($client);
     <p><a href="signout.php">Sign out</a> </p>
 <?php else : ?>
     <div id="twit" class="fa fa-twitter">
+            <br>
             <a id="link" href="<?php echo $auth->getAuthUrl();?>">Sign In</a>
         </div>
     </div>
