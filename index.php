@@ -106,7 +106,7 @@ $auth = new auth($client);
         <span class="dot" onclick="currentSlide(3)"></span>
     </div>
     <?php
-    echo 'othertweets'.'<br>';
+    /*echo 'othertweets'.'<br>';
     $count=0;
     foreach ($twit as $value) {
         $count++;
@@ -148,7 +148,7 @@ $auth = new auth($client);
     //print_r($arr);
     ?>
 
-    <p><a href="signout.php">Sign out</a> </p>
+    <p><a href="signout.php">Sign out</a> </p>*/?>
 <?php else : ?>
     <div id="twit" class="fa fa-twitter">
             <br><br>
