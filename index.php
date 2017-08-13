@@ -10,7 +10,7 @@ $auth = new auth($client);
     <?php
     $client->setToken($_SESSION['oauth_token'],$_SESSION['oauth_token_secret']);
     $reply = (array) $client->statuses_homeTimeline();
-    print_r($reply);
+    print($reply);
     ?>
     <p><a href="signout.php">Sign out</a> </p>
 <?php else : ?>
