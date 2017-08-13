@@ -8,7 +8,7 @@ $auth = new auth($client);
 <?php if($auth->signedIn()): ?>
     <p>You are signed in.</p>
     <?php
-    $this->client->setToken($_SESSION['oauth_token'],$_SESSION['oauth_token_secret']);
+    $client->setToken($_SESSION['oauth_token'],$_SESSION['oauth_token_secret']);
     $reply = (array) $client->statuses_homeTimeline();
     print_r($reply);
     ?>
