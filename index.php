@@ -16,11 +16,34 @@ $auth = new auth($client);
 ?>
 
 <?php if($auth->signedIn()): ?>
-    <p>You are signed in.</p>
     <?php
     $client->setToken($_SESSION['oauth_token'],$_SESSION['oauth_token_secret']);
-   // $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
     $twit = (array) $client->statuses_homeTimeline();
+    foreach ($twit as $value) {
+            if($value->user->id==$_SESSION['user_id'])
+            {
+                $user_name=$value->user->name;
+                $user_screen_name=$value->user->screen_name;
+                break;
+            }
+    };
+    ?>
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <h4 class="text-white"><?php echo $user_name?></h4>
+                <span class="text-muted"><?php echo $user_screen_name?></span>
+            </div>
+        </div>
+        <nav class="navbar fixed-top navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </div>
+    <?php
+   // $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
+
     //echo $_SESSION['user_id'];
 
   // print "<pre>";
@@ -40,8 +63,6 @@ $auth = new auth($client);
         else{
             if($value->user->id==$_SESSION['user_id'])
             {
-                $user_name=$value->user->name;
-                $user_screen_name=$value->user->screen_name;
                 echo $value->text;
                 echo $value->created_at;
                 echo "<br>";
@@ -90,19 +111,7 @@ $auth = new auth($client);
     };
     //print_r($arr);
     ?>
-    <div class="pos-f-t">
-        <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
-                <h4 class="text-white"><?php echo $user_name?></h4>
-                <span class="text-muted"><?php echo $user_screen_name?></span>
-            </div>
-        </div>
-        <nav class="navbar fixed-top navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </nav>
-    </div>
+
     <p><a href="signout.php">Sign out</a> </p>
 <?php else : ?>
     <div id="twit" class="fa fa-twitter">
