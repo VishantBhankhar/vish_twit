@@ -24,7 +24,7 @@ $auth = new auth($client);
    // print "<pre>";
    // print_r($reply);
    // print "</pre>";
-    $profile=$client->users_show_ID();
+    $profile=$client->users_show_NAME($_SESSION['user_id']);
     print "<pre>";
     print($profile);
     print "</pre>";
