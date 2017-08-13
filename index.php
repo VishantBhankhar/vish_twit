@@ -22,7 +22,7 @@ $auth = new auth($client);
    // $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
     $twit = (array) $client->statuses_homeTimeline();
    print "<pre>";
-   print_r($reply);
+   print_r($twit);
    print "</pre>";
 
     echo "<br>";
