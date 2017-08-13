@@ -21,6 +21,8 @@ $auth = new auth($client);
     $client->setToken($_SESSION['oauth_token'],$_SESSION['oauth_token_secret']);
    // $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
     $twit = (array) $client->statuses_homeTimeline();
+    echo $_SESSION['user_id'];
+
    print "<pre>";
    print_r($twit);
    print "</pre>";
@@ -36,7 +38,7 @@ $auth = new auth($client);
             break;
         }
         else{
-            if($value->id==$_SESSION['user_id'])
+            if($value->user->id==$_SESSION['user_id'])
             {
 
                 echo $value->text;
