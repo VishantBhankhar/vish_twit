@@ -40,7 +40,7 @@ $auth = new auth($client);
     //print "<pre>";
     //print_r($friend);
     //print "</pre>";
-    $arr=array();
+    //$arr=array();
     $count=0;
     foreach($friend as $row => $innerArray) {
         foreach ($innerArray as $innerRow => $value) {
@@ -51,13 +51,15 @@ $auth = new auth($client);
             else
             {
                 //check
-                array_push($arr,$value->name);
+               // array_push($arr,$value->name);
                 echo $value->name . "<br/>";
             }
 
         };
     };
-    print_r($arr);
+    //print_r($arr);
+    $check = $client->search_tweets('t=Twitter', true);
+    echo $check;
     ?>
 
     <p><a href="signout.php">Sign out</a> </p>
