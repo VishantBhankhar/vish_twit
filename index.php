@@ -33,7 +33,7 @@ $auth = new auth($client);
 
     };
     $friend =(array) $client->followers_list();
-    $friend=$friend->user;
+    $friend=(array)$friend->user;
     print "<pre>";
     print_r($friend);
     print "</pre>";
