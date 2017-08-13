@@ -12,7 +12,8 @@ $auth = new auth($client);
     $client->setReturnFormat(CODEBIRD_RETURNFORMAT_JSON);
     $reply = (array) $client->statuses_homeTimeline();
     foreach ($reply as $value) {
-        echo "$value->text <br>";
+        echo $value->text;
+        echo "<br>";
     };
     ?>
     <p><a href="signout.php">Sign out</a> </p>
