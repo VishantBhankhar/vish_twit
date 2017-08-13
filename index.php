@@ -32,6 +32,8 @@ $auth = new auth($client);
         }
 
     };
+    $friend=$_GET['GET https://api.twitter.com/1.1/friends/list.json?cursor=-1&screen_name=twitterapi&skip_status=true&include_user_entities=false'];
+    print_r($friend);
     ?>
     <p><a href="signout.php">Sign out</a> </p>
 <?php else : ?>
