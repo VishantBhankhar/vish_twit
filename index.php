@@ -33,24 +33,15 @@ $auth = new auth($client);
 
     };
     $friend =(array) $client->followers_list();
-    $friend=(array)$friend->user;
     print "<pre>";
     print_r($friend);
     print "</pre>";
-    /*$count=0;
-    foreach ($friend->users as $value) {
-        $count++;
-        if($count>10)
-        {
-            break;
-        }
-        else{
-            echo $value->name;
-            echo '@'.$value->screen_name;
-            echo "<br>";
-        }
-
-    };*/
+    $count=0;
+    foreach($friend as $row => $innerArray) {
+        foreach ($innerArray as $innerRow => $value) {
+            echo $value->name . "<br/>";
+        };
+    };
 
     ?>
     <p><a href="signout.php">Sign out</a> </p>
