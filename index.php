@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php
 require_once 'vendor/autoload.php';
 require_once 'app/init.php';
@@ -50,14 +51,6 @@ $auth = new auth($client);
             }
             else
             {
-                //check
-               // array_push($arr,$value->name);
-                $client->setToken($value->id,$value->screen_name);
-                // $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
-                $friendinfo = (array) $client->statuses_homeTimeline();
-                print "<pre>";
-                print_r($friendinfo);
-                print "</pre>";
                 echo $value->name . "<br/>";
             }
 
@@ -70,6 +63,7 @@ $auth = new auth($client);
 
     <p><a href="signout.php">Sign out</a> </p>
 <?php else : ?>
+    <a href="#" class="fa fa-twitter"></a>
     <p><a href="<?php echo $auth->getAuthUrl();?>">Sign in with Twitter</a> </p>
 <?php endif; ?>
 
