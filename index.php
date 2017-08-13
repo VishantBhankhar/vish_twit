@@ -65,7 +65,8 @@ $auth = new auth($client);
     $count=0;
     echo 'mytweets'.'<br>';
     ?>
-
+    <div class="slideshow-container">
+    <div class="mySlides fade">
     <?php
     foreach ($twit as $value) {
         $count++;
@@ -77,8 +78,8 @@ $auth = new auth($client);
             if($value->user->id==$_SESSION['user_id'])
             {
     ?>
-                <div class="slideshow-container">
-        <div class="mySlides fade">
+
+
             <div class="numbertext"><?php echo $count?> </div>
              <img src="<?php echo $value->user->profile_image_url?>" style="width:100%">
             <p>
@@ -88,16 +89,7 @@ $auth = new auth($client);
                 ?>
             </p>
             <div class="text">Caption Text</div>
-        </div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                <br>
 
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                </div>
         <?php
 
             }
@@ -105,7 +97,16 @@ $auth = new auth($client);
         }
     };
     ?>
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <br>
 
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
     <?php
     /*echo 'othertweets'.'<br>';
     $count=0;
