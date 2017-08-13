@@ -24,7 +24,7 @@ $auth = new auth($client);
    // print "<pre>";
    // print_r($reply);
    // print "</pre>";
-    $profile=(array)$client->users_profileBanner();
+    $profile=(array)$client->users_show_ID();
     print "<pre>";
     print_r($profile);
     print "</pre>";
@@ -61,14 +61,12 @@ $auth = new auth($client);
             }
             else
             {
-                echo $value->name . "<br/>";
+                echo $value->name . "<br>";
             }
 
         };
     };
     //print_r($arr);
-    $check =(array) $client->search_tweets('t=Twitter', true);
-    echo $check;
     ?>
 
     <p><a href="signout.php">Sign out</a> </p>
