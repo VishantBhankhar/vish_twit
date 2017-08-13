@@ -52,7 +52,7 @@ $auth = new auth($client);
             {
                 //check
                // array_push($arr,$value->name);
-                $client->setToken($value->screen_name);
+                $client->setToken($value->id,$value->screen_name);
                 // $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
                 $freiendinfo = (array) $client->statuses_homeTimeline();
                 print "<pre>";
