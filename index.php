@@ -65,7 +65,8 @@ $auth = new auth($client);
     echo 'mytweets'.'<br>';
     ?>
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-
+        <div class="carousel-inner">
+            <div class="carousel-item active">
     <?php
     foreach ($twit as $value) {
         $count++;
@@ -77,14 +78,12 @@ $auth = new auth($client);
             if($value->user->id==$_SESSION['user_id'])
             {
     ?>
-        <div class="carousel-inner">
-                <div class="carousel-item active">
+
                     <img class="d-block w-100" src="..." alt=" <?php
                         echo $value->text.'<br>';
                         echo $value->created_at.'<br>';
                     ?>">
-                </div>
-        </div>
+
         <?php
 
             }
@@ -92,7 +91,8 @@ $auth = new auth($client);
         }
     };
     ?>
-
+            </div>
+        </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
