@@ -76,9 +76,7 @@ $auth = new auth($client);
 
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="http://towerdevsite.com/rolling/wp-content/uploads/2013/01/black_background.jpg">
-                <div class="carousel-caption d-none d-md-block">
+
             <?php
             foreach ($twit as $value) {
                 $count++;
@@ -87,19 +85,23 @@ $auth = new auth($client);
                 } else {
                     if ($value->user->id == $_SESSION['user_id']) {
                         ?>
+            <div class="carousel-item active">
+                <img src="http://towerdevsite.com/rolling/wp-content/uploads/2013/01/black_background.jpg">
+                <div class="carousel-caption d-none d-md-block">
                         <p>
                         <?php
                             echo $value->text;
                             echo $value->created_at;
                         ?>
                         </p>
+                </div>
+            </div>
             <?php
             }
                 }
             };
             ?>
-                </div>
-        </div>
+
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
