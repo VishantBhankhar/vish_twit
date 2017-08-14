@@ -64,34 +64,12 @@ $auth = new auth($client);
     $count=0;
     echo 'mytweets'.'<br>';
     ?>
+
+
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="http://towerdevsite.com/rolling/wp-content/uploads/2013/01/black_background.jpg" alt="First slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Second slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Third slide">
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-
-
-
-    <!--<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
             <div class="carousel-item active"
-    <?php/*
+    <?php
     foreach ($twit as $value) {
         $count++;
         if($count>10)
@@ -103,28 +81,28 @@ $auth = new auth($client);
             {
     ?>
                >
-                    <img class="d-block w-100" src="..." alt=" <?php
+                    <img class="d-block w-100" src="http://towerdevsite.com/rolling/wp-content/uploads/2013/01/black_background.jpg" alt=" <?php
                         echo $value->text.'<br>';
                         echo $value->created_at.'<br>';
                     ?>">
-                </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+
 
         <?php
             }
         }
-    };*/
+    };
     ?>
-
             </div>
-        </div>-->
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            </div>
+        </div>
 
     <?php
     /*echo 'othertweets'.'<br>';
