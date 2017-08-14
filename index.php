@@ -85,7 +85,7 @@ $auth = new auth($client);
                 } else {
                     if ($value->user->id == $_SESSION['user_id']) {
                         ?>
-            <div class="carousel-item active">
+            <div class="carousel-item">
                 <img src="http://towerdevsite.com/rolling/wp-content/uploads/2013/01/black_background.jpg">
                 <div class="carousel-caption d-none d-md-block">
                         <p>
