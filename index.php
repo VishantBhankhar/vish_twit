@@ -67,7 +67,7 @@ $auth = new auth($client);
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="..." alt="First slide">
+                <img class="d-block w-100" src="http://towerdevsite.com/rolling/wp-content/uploads/2013/01/black_background.jpg" alt="First slide">
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="..." alt="Second slide">
@@ -86,14 +86,7 @@ $auth = new auth($client);
         </a>
     </div>
 
-    <div class="card" style="width: 20rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div
+
 
     <!--<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
