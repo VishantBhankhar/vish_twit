@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="script.js"></script>
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -65,8 +64,8 @@ $auth = new auth($client);
     $count=0;
     echo 'mytweets'.'<br>';
     ?>
-    <div class="slideshow-container">
-    <div class="mySlides fade">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
     <?php
     foreach ($twit as $value) {
         $count++;
@@ -78,17 +77,12 @@ $auth = new auth($client);
             if($value->user->id==$_SESSION['user_id'])
             {
     ?>
-
-
-            <div class="numbertext"><?php echo $count?> </div>
-             <img src="<?php echo $value->user->profile_image_url?>" style="width:100%">
-            <p>
-                <?php
-                echo $value->text.'<br>';
-                echo $value->created_at.'<br>';
-                ?>
-            </p>
-            <div class="text">Caption Text</div>
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="..." alt=" <?php
+                        echo $value->text.'<br>';
+                        echo $value->created_at.'<br>';
+                    ?>">
+                </div>
 
         <?php
 
@@ -97,15 +91,15 @@ $auth = new auth($client);
         }
     };
     ?>
-    </div>
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    <br>
-
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
     <?php
     /*echo 'othertweets'.'<br>';
