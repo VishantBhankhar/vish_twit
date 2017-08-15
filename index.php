@@ -121,7 +121,7 @@ $count = 1;
 echo '<br>' . '<br>';
 ?>
 
-<div  class="row" style="background-color: gray">
+<div  class="row" style="background-color: inherit">
     <div id="card1" class="col-md-4">
         <div class="card text-white bg-secondary mb-3" style="width: 26rem;">
             <img id="image_profile" class="card-img-top" src="<?php echo $user_profile_pic ?>" alt="Card image cap">
