@@ -120,7 +120,7 @@ $count = 1;
 <?php
 echo '<br>' . '<br>';
 ?>
-<nav id="navbar-example2" class="navbar navbar-light bg-light">
+<nav id="navbar" class="navbar navbar-light bg-light">
 <div class="row">
     <div class="col-sm-6">
         <div class="card text-white bg-secondary mb-3" style="width: 20rem;">
@@ -162,7 +162,7 @@ echo '<br>' . '<br>';
             <ul class="list-group list-group-flush">
                 <?php
 
-                $count = 0;
+                $count = 1;
                 foreach ($twit as $value) {
 
                     if ($count > 10) {
@@ -189,6 +189,8 @@ echo '<br>' . '<br>';
     </div>
 </div>
 </nav>
+    <div data-spy="scroll" data-target="#navbar" data-offset="0">
+    </div>
     <?php/*
     $friend = (array)$client->followers_list();
                 //print "<pre>";
