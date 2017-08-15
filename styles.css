@@ -32,6 +32,6 @@
     align-self: center;
 }
 #card1,#card2{
-    max-height: 800px;
+    max-height: 500px;
     overflow: scroll;
 }
