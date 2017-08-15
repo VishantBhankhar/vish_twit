@@ -73,81 +73,85 @@ $auth = new auth($client);
     //echo "<br>";
 
     $count = 1;
-?>
-<div id="slide" class="container">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class=img_fluid" src="./images/pic.jpg">
-                <div class="carousel-caption">
-                    <h1> <?php echo 'Recent tweets'?></h1>
-                </div>
-            </div>
-            <?php
-            foreach ($twit as $value) {
-
-                if ($count > 10) {
-                    break;
-                } else {
-                    ?>
-                    <div class="carousel-item">
-                        <img class=img_fluid" src="./images/pic.jpg">
-                        <div class="carousel-caption">
-                            <h4> <?php echo $value->text ?></h4>
-                            <p>By: <?php echo $value->user->name?>  at : <?php echo $value->created_at ?></p>
-                        </div>
+    ?>
+    <div id="slide" class="container">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class=img_fluid" src="./images/pic.jpg">
+                    <div class="carousel-caption">
+                        <h1> <?php echo 'Recent tweets' ?></h1>
                     </div>
-                    <?php
-                }
-                $count++;
-            };
+                </div>
+                <?php
+                foreach ($twit as $value) {
 
-            ?>
+                    if ($count > 10) {
+                        break;
+                    } else {
+                        ?>
+                        <div class="carousel-item">
+                            <img class=img_fluid" src="./images/pic.jpg">
+                            <div class="carousel-caption">
+                                <h4> <?php echo $value->text ?></h4>
+                                <p>By: <?php echo $value->user->name ?> at : <?php echo $value->created_at ?></p>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    $count++;
+                };
 
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+                ?>
+
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
     </div>
-    </div>
-</div>
-
 
 
     <?php
-    echo '<br>'.'mytweets' . '<br>';
-?>
-    <div class="card" style="width: 20rem;">
-  <img class="card-img-top" src="<?php echo $user_profile_pic?>" alt="Card image cap">
-  <div class="card-body">
-    <h4 class="card-title">My tweets</h4>
-  </div>
-  <ul class="list-group list-group-flush">
-      <?php
-      $count = 1;
+    echo '<br>' . '<br>';
+    ?>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card" style="width: 20rem;">
+                <img id="image profile" class="card-img-top" src="<?php echo $user_profile_pic ?>" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">My tweets</h4>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <?php
+                    $count = 1;
 
-      foreach ($twit as $value) {
+                    foreach ($twit as $value) {
 
-          if ($count > 10) {
-              break;
-          } else {
-              $count++;
-              if ($value->user->id == $_SESSION['user_id']) {
-                  ?>
-                  <li class="list-group-item"><?php $value->text?></li>
-      <?php
-              }
-          }
-      };
+                        if ($count > 10) {
+                            break;
+                        } else {
 
-      ?>
+                            if ($value->user->id == $_SESSION['user_id']) {
+                                $count++;
+                                ?>
+                                <li class="list-group-item"><?php echo $value->text ?></li>
+                                <?php
+                            }
+                        }
+                    };
 
-  </ul>
-</div>
+                    ?>
+
+                </ul>
+            </div>
+        </div>
+    </div>
     <?php
     /*echo 'othertweets'.'<br>';
     $count=0;
