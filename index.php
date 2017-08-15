@@ -71,7 +71,7 @@ $auth = new auth($client);
 
     //echo "<br>";
 
-    $count = 0;
+    $count = 1;
 ?>
 <div class="container">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -84,23 +84,23 @@ $auth = new auth($client);
             </div>
             <?php
             foreach ($twit as $value) {
-                $count++;
+
                 if ($count > 10) {
                     break;
                 } else {
-                    if ($value->user->id == $_SESSION['user_id']) {
-                        ?>
-                        <div class="carousel-item">
-                            <img class=img_fluid" src="./images/pic.jpg">
-                            <div class="carousel-caption">
-                                <h1> <?php echo $value->text ?></h1>
-                                <p>Tweeted at : <?php echo $value->created_at ?></p>
-                            </div>
+                    ?>
+                    <div class="carousel-item">
+                        <img class=img_fluid" src="./images/pic.jpg">
+                        <div class="carousel-caption">
+                            <h1> <?php echo $value->text ?></h1>
+                            <p>By: <?php echo $value->user->name?>  at : <?php echo $value->created_at ?></p>
                         </div>
-            <?php
-            }
+                    </div>
+                    <?php
                 }
+                $count++;
             };
+
             ?>
 
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -117,7 +117,21 @@ $auth = new auth($client);
 
     <?php
     echo '<br>'.'mytweets' . '<br>';
+    $count = 1;
+    ?>
+            <?php
+            foreach ($twit as $value) {
 
+                if ($count > 10) {
+                    break;
+                } else {
+                    $count++;
+                    if ($value->user->id == $_SESSION['user_id']) {
+
+                    }
+                }
+            };
+            ?>
 
     /*echo 'othertweets'.'<br>';
     $count=0;
