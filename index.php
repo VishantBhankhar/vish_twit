@@ -125,9 +125,7 @@ echo '<br>' . '<br>';
     <div id="card1" class="col-md-4">
         <div class="card text-white bg-secondary mb-3" style="width: 26rem;">
             <img id="image_profile" class="card-img-top" src="<?php echo $user_profile_pic ?>" alt="Card image cap">
-            <div class="card-body" style="float: left">
                 <h4 class="card-title">My tweets</h4>
-            </div>
             <ul class="list-group list-group-flush">
                 <?php
                 $count = 1;
