@@ -122,6 +122,23 @@ $auth = new auth($client);
     echo '<br>' . '<br>';
     ?>
 
+    <div id="container"></div>
+    <script>
+        var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(<?php print_r($twit)?>));
+
+        var a = document.createElement('a');
+        a.href = 'data:' + data;
+        a.download = 'data.json';
+        a.innerHTML = 'download JSON';
+
+        var container = document.getElementById('container');
+        container.appendChild(a);
+    </script>
+
+    <?php
+    echo '<br>' . '<br>';
+    ?>
+
     <div class="row" style="background-color: inherit">
         <div id="card1" class="col-md-4">
             <div class="card text-white bg-secondary mb-3" style="width: 26rem;">
@@ -211,6 +228,7 @@ $auth = new auth($client);
                         }
 
                     };
+                    break;
                 };
                 ?>
             </div>
