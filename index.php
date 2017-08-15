@@ -77,7 +77,7 @@ $auth = new auth($client);
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class=img_fluid" src="https://tse4.mm.bing.net/th?id=OIP.84kKT2j45kYR5k-AWeCsGwEsCo&pid=Api&w=321&h=181">
+                <img class=img_fluid" src="./images/pic.jpg">
                 <div class="carousel-caption">
                     <h1> <?php echo 'Let\'s Go'?></h1>
                 </div>
@@ -91,7 +91,7 @@ $auth = new auth($client);
                     if ($value->user->id == $_SESSION['user_id']) {
                         ?>
                         <div class="carousel-item">
-                            <img class=img_fluid" src="https://tse4.mm.bing.net/th?id=OIP.84kKT2j45kYR5k-AWeCsGwEsCo&pid=Api&w=321&h=181">
+                            <img class=img_fluid" src="./images/pic.jpg">
                             <div class="carousel-caption">
                                 <h1> <?php echo $value->text ?></h1>
                                 <p>Tweeted at : <?php echo $value->created_at ?></p>
