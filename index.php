@@ -26,6 +26,7 @@ $auth = new auth($client);
     <?php
     $client->setToken($_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
     $twit = (array)$client->statuses_homeTimeline();
+    $firstnode = array_values($twit)[0];
     foreach ($twit as $value) {
         if ($value->user->id == $_SESSION['user_id']) {
             $user_name = $value->user->name;
@@ -76,7 +77,13 @@ $auth = new auth($client);
 
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-
+            <div class="carousel-item active">
+                <img class=img_fluid" src="http://towerdevsite.com/rolling/wp-content/uploads/2013/01/black_background.jpg">
+                <div class="carousel-caption">
+                    <h1> <?php echo $firstNode->text ?></h1>
+                    <p>Tweeted at : <?php echo $firstNode->created_at ?></p>
+                </div>
+            </div>
             <?php
             foreach ($twit as $value) {
                 $count++;
@@ -85,17 +92,17 @@ $auth = new auth($client);
                 } else {
                     if ($value->user->id == $_SESSION['user_id']) {
                         ?>
-            <div class="carousel-item">
-                <img src="http://towerdevsite.com/rolling/wp-content/uploads/2013/01/black_background.jpg">
-                <div class="carousel-caption d-none d-md-block">
-                        <p>
+                        <div class="carousel-item">
+                            <img class=img_fluid" src="http://towerdevsite.com/rolling/wp-content/uploads/2013/01/black_background.jpg">
+                            <div class="carousel-caption">
+                                <h1> <?php echo $value->text ?></h1>
+                                <p>Tweeted at : <?php echo $value->created_at ?></p>
+                            </div>
+                        </div>
                         <?php
                             echo $value->text;
                             echo $value->created_at;
                         ?>
-                        </p>
-                </div>
-            </div>
             <?php
             }
                 }
