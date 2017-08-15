@@ -211,6 +211,7 @@ $auth = new auth($client);
                         }
 
                     };
+                    break;
                 };
                 ?>
             </div>
