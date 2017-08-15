@@ -29,7 +29,7 @@ $auth = new auth($client);
         if ($value->user->id == $_SESSION['user_id']) {
             $user_name = $value->user->name;
             $user_screen_name = $value->user->screen_name;
-            $user_profile_pic = $value->user->;
+            //$user_profile_pic = $value->user->;
             break;
         }
     };
@@ -188,9 +188,9 @@ $auth = new auth($client);
 
         };
     };
-    //print_r($arr);
+    //print_r($arr);*/
     ?>
- ?>
+
 <?php else : ?>
     <div id="twit" class="fa fa-twitter">
         <br><br>
