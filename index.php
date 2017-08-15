@@ -123,7 +123,7 @@ $auth = new auth($client);
     <div class="row">
         <div class="col-sm-6">
             <div class="card text-white bg-secondary mb-3" style="width: 20rem;">
-                <img id="image_profile" class="card-img-top" src="<?php echo $user_profile_pic_https ?>" alt="Card image cap">
+                <img id="image_profile" class="card-img-top" src="<?php echo $user_profile_pic ?>" alt="Card image cap">
                 <div class="card-body">
                     <h4 class="card-title">My tweets</h4>
                 </div>
