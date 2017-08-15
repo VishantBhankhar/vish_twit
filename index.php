@@ -120,8 +120,8 @@ $count = 1;
 <?php
 echo '<br>' . '<br>';
 ?>
-<nav id="navbar" class="navbar navbar-light bg-light">
-<div class="row">
+
+<div id="card1" class="row">
     <div class="col-sm-6">
         <div class="card text-white bg-secondary mb-3" style="width: 20rem;">
             <img id="image_profile" class="card-img-top" src="<?php echo $user_profile_pic ?>" alt="Card image cap">
@@ -154,7 +154,7 @@ echo '<br>' . '<br>';
     </div>
 
 
-    <div class="col-sm-6">
+    <div id="card2" class="col-sm-6">
         <div class="card text-white bg-secondary mb-3" style="width: 20rem;">
             <div class="card-body">
                 <h4 class="card-title">Followers tweets</h4>
@@ -188,9 +188,8 @@ echo '<br>' . '<br>';
         </div>
     </div>
 </div>
-</nav>
-    <div data-spy="scroll" data-target="#navbar" data-offset="0">
-    </div>
+
+
     <?php/*
     $friend = (array)$client->followers_list();
                 //print "<pre>";
