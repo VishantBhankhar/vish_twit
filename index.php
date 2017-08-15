@@ -29,6 +29,7 @@ $auth = new auth($client);
         if ($value->user->id == $_SESSION['user_id']) {
             $user_name = $value->user->name;
             $user_screen_name = $value->user->screen_name;
+            $user_profile_pic = $value->user->;
             break;
         }
     };
@@ -65,15 +66,15 @@ $auth = new auth($client);
 
     //echo $_SESSION['user_id'];
 
-    // print "<pre>";
-    //print_r($twit);
-    //print "</pre>";
+     print "<pre>";
+    print_r($twit);
+    print "</pre>";
 
     //echo "<br>";
 
     $count = 1;
 ?>
-<div class="container">
+<div id="slide" class="container">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -115,23 +116,39 @@ $auth = new auth($client);
     </div>
 </div>
 
+
+
     <?php
     echo '<br>'.'mytweets' . '<br>';
-    $count = 1;
+?>
+    <div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h4 class="card-title">My tweets</h4>
+  </div>
+  <ul class="list-group list-group-flush">
+      <?php
+      $count = 1;
 
-            foreach ($twit as $value) {
+      foreach ($twit as $value) {
 
-                if ($count > 10) {
-                    break;
-                } else {
-                    $count++;
-                    if ($value->user->id == $_SESSION['user_id']) {
+          if ($count > 10) {
+              break;
+          } else {
+              $count++;
+              if ($value->user->id == $_SESSION['user_id']) {
+                  ?>
+                  <li class="list-group-item"><?php $value->text?></li>
+      <?php
+              }
+          }
+      };
 
-                    }
-                }
-            };
+      ?>
 
-
+  </ul>
+</div>
+    <?php
     /*echo 'othertweets'.'<br>';
     $count=0;
     foreach ($twit as $value) {
@@ -173,8 +190,7 @@ $auth = new auth($client);
     };
     //print_r($arr);
     ?>
-
-    <p><a href="signout.php">Sign out</a> </p>*/ ?>
+ ?>
 <?php else : ?>
     <div id="twit" class="fa fa-twitter">
         <br><br>
