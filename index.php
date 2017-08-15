@@ -122,7 +122,7 @@ echo '<br>' . '<br>';
 ?>
 
 <div id="card1" class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <div class="card text-white bg-secondary mb-3" style="width: 20rem;">
             <img id="image_profile" class="card-img-top" src="<?php echo $user_profile_pic ?>" alt="Card image cap">
             <div class="card-body">
@@ -154,7 +154,7 @@ echo '<br>' . '<br>';
     </div>
 
 
-    <div id="card2" class="col-sm-6">
+    <div id="card2" class="col-sm-4">
         <div class="card text-white bg-secondary mb-3" style="width: 20rem;">
             <div class="card-body">
                 <h4 class="card-title">Followers tweets</h4>
