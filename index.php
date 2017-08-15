@@ -235,11 +235,7 @@ $auth = new auth($client);
         </div>
 
     </div>
-    <?php
-    print "<pre>";
-    print_r($friend);
-    print "</pre>";
-    ?>
+
 <?php else : ?>
     <div id="twit" class="fa fa-twitter">
         <br><br>
