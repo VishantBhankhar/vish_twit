@@ -92,7 +92,7 @@ $auth = new auth($client);
                     <div class="carousel-item">
                         <img class=img_fluid" src="./images/pic.jpg">
                         <div class="carousel-caption">
-                            <h1> <?php echo $value->text ?></h1>
+                            <h4> <?php echo $value->text ?></h4>
                             <p>By: <?php echo $value->user->name?>  at : <?php echo $value->created_at ?></p>
                         </div>
                     </div>
@@ -118,8 +118,7 @@ $auth = new auth($client);
     <?php
     echo '<br>'.'mytweets' . '<br>';
     $count = 1;
-    ?>
-            <?php
+
             foreach ($twit as $value) {
 
                 if ($count > 10) {
@@ -131,7 +130,7 @@ $auth = new auth($client);
                     }
                 }
             };
-            ?>
+    
 
     /*echo 'othertweets'.'<br>';
     $count=0;
