@@ -74,7 +74,7 @@ $auth = new auth($client);
     echo 'mytweets' . '<br>';
     ?>
 
-
+<div class="container">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -99,10 +99,6 @@ $auth = new auth($client);
                                 <p>Tweeted at : <?php echo $value->created_at ?></p>
                             </div>
                         </div>
-                        <?php
-                            echo $value->text;
-                            echo $value->created_at;
-                        ?>
             <?php
             }
                 }
@@ -119,6 +115,7 @@ $auth = new auth($client);
         </a>
     </div>
     </div>
+</div>
 
     <?php
     /*echo 'othertweets'.'<br>';
