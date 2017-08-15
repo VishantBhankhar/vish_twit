@@ -211,14 +211,17 @@ $auth = new auth($client);
                         }
 
                     };
-                    break;
                 };
                 ?>
             </div>
         </div>
 
     </div>
-
+    <?php
+    print "<pre>";
+    print_r($friend);
+    print "</pre>";
+    ?>
 <?php else : ?>
     <div id="twit" class="fa fa-twitter">
         <br><br>
