@@ -29,7 +29,7 @@ $auth = new auth($client);
         if ($value->user->id == $_SESSION['user_id']) {
             $user_name = $value->user->name;
             $user_screen_name = $value->user->screen_name;
-            //$user_profile_pic = $value->user->;
+            $user_profile_pic = $value->user->profile_image_url;
             break;
         }
     };
@@ -66,9 +66,9 @@ $auth = new auth($client);
 
     //echo $_SESSION['user_id'];
 
-     print "<pre>";
-    print_r($twit);
-    print "</pre>";
+    // print "<pre>";
+    //print_r($twit);
+//    print "</pre>";
 
     //echo "<br>";
 
@@ -122,7 +122,7 @@ $auth = new auth($client);
     echo '<br>'.'mytweets' . '<br>';
 ?>
     <div class="card" style="width: 20rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
+  <img class="card-img-top" src="<?php echo $user_profile_pic?>" alt="Card image cap">
   <div class="card-body">
     <h4 class="card-title">My tweets</h4>
   </div>
