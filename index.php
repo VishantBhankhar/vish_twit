@@ -193,18 +193,19 @@ $auth = new auth($client);
         <div id="card1" class="col-md-4">
             <div class="card text-white bg-secondary mb-3" style="width: 26rem;">
                 <?php
-                $count = 0;
+                $count = 1;
                 foreach ($friend as $row => $innerArray) {
                     foreach ($innerArray as $innerRow => $value) {
                         if ($count > 10) {
                             break;
                         } else {
+                            $count++;
                             ?>
                             <img id="image_profile" class="card-img-top" src="<?php echo $value->profile_image_url ?>"
                                  alt="Card image cap">
                             <div class="card-body">
                                 <h4 class="card-title"><?php echo $value->name ?></h4>
-                                <h2 class="card-title"><?php echo $value->screen_name ?></h2>
+                                <h6 class="card-title"><?php echo $value->screen_name ?></h6>
                             </div>
                             <?php
                         }
