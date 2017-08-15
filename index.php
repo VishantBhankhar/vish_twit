@@ -79,7 +79,7 @@ $auth = new auth($client);
             <div class="carousel-item active">
                 <img class=img_fluid" src="./images/pic.jpg">
                 <div class="carousel-caption">
-                    <h1> <?php echo 'Let\'s Go'?></h1>
+                    <h1> <?php echo 'Recent tweets'?></h1>
                 </div>
             </div>
             <?php
@@ -130,7 +130,7 @@ $auth = new auth($client);
                     }
                 }
             };
-    
+
 
     /*echo 'othertweets'.'<br>';
     $count=0;
