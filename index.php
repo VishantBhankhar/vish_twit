@@ -120,6 +120,7 @@ $count = 1;
 <?php
 echo '<br>' . '<br>';
 ?>
+<nav id="navbar-example2" class="navbar navbar-light bg-light">
 <div class="row">
     <div class="col-sm-6">
         <div class="card text-white bg-secondary mb-3" style="width: 20rem;">
@@ -140,7 +141,7 @@ echo '<br>' . '<br>';
                         if ($value->user->id == $_SESSION['user_id']) {
                             $count++;
                             ?>
-                            <li class="list-group-item  bg-secondary"><?php echo $value->text ?></li>
+                            <li class="list-group-item  bg-secondary"><?php echo $value->text.'<br>';  echo $value->created_at?></li>
                             <?php
                         }
                     }
@@ -187,6 +188,7 @@ echo '<br>' . '<br>';
         </div>
     </div>
 </div>
+</nav>
     <?php/*
     $friend = (array)$client->followers_list();
                 //print "<pre>";
