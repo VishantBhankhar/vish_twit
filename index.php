@@ -121,9 +121,9 @@ $count = 1;
 echo '<br>' . '<br>';
 ?>
 
-<div  class="row">
+<div  class="row" style="background-color: darkgray">
     <div id="card1" class="col-md-4">
-        <div class="card text-white bg-secondary mb-3" style="width: 20rem;">
+        <div class="card text-white bg-secondary mb-3" style="width: 30rem;">
             <img id="image_profile" class="card-img-top" src="<?php echo $user_profile_pic ?>" alt="Card image cap">
             <div class="card-body">
                 <h4 class="card-title">My tweets</h4>
@@ -155,7 +155,7 @@ echo '<br>' . '<br>';
 
 
     <div id="card1" class="col-md-4">
-        <div class="card text-white bg-secondary mb-3" style="width: 20rem;">
+        <div class="card text-white bg-secondary mb-3" style="width: 30rem;">
             <div class="card-body">
                 <h4 class="card-title">Followers tweets</h4>
             </div>
