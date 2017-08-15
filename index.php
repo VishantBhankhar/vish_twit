@@ -18,7 +18,6 @@
 require_once 'vendor/autoload.php';
 require_once 'app/init.php';
 
-
 $auth = new auth($client);
 ?>
 
@@ -34,6 +33,7 @@ $auth = new auth($client);
         }
     };
     ?>
+
     <div class="pos-f-t">
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="bg-dark p-4">
@@ -58,6 +58,8 @@ $auth = new auth($client);
         </button>
     </nav>
     </div>
+    <br>
+    <br>
     <?php
     // $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
 
@@ -114,7 +116,7 @@ $auth = new auth($client);
 </div>
 
     <?php
-    echo 'mytweets' . '<br>';
+    echo '<br>'.'mytweets' . '<br>';
 
 
     /*echo 'othertweets'.'<br>';
