@@ -22,25 +22,26 @@ $auth = new auth($client);
 ?>
 
 <?php if ($auth->signedIn()): ?>
-<?php
-$client->setToken($_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
-$twit = (array)$client->statuses_homeTimeline();
-foreach ($twit as $value) {
-    if ($value->user->id == $_SESSION['user_id']) {
-        $user_name = $value->user->name;
-        $user_screen_name = $value->user->screen_name;
-        $user_profile_pic = $value->user->profile_image_url;
-        break;
-    }
-};
-?>
+    <?php
+    $client->setToken($_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
+    $friend = (array)$client->followers_list();
+    $twit = (array)$client->statuses_homeTimeline();
+    foreach ($twit as $value) {
+        if ($value->user->id == $_SESSION['user_id']) {
+            $user_name = $value->user->name;
+            $user_screen_name = $value->user->screen_name;
+            $user_profile_pic = $value->user->profile_image_url;
+            break;
+        }
+    };
+    ?>
 
-<div class="pos-f-t">
-    <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
-            <h4 class="text-white"><?php echo $user_name ?></h4>
-            <span class="text-muted"><?php echo $user_screen_name ?>
-                <span class="dropdown">
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <h4 class="text-white"><?php echo $user_name ?></h4>
+                <span class="text-muted"><?php echo $user_screen_name ?>
+                    <span class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     </button>
@@ -49,171 +50,179 @@ foreach ($twit as $value) {
                     </div>
                 </span>
                 </span>
+            </div>
         </div>
     </div>
-</div>
-<nav class="navbar navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
-            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</nav>
-</div>
-<br>
-<br>
-<?php
+    <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+                aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    </div>
+    <br>
+    <br>
+    <?php
 // $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
 
 //echo $_SESSION['user_id'];
-/*
-print "<pre>";
-print_r($twit);
-print "</pre>";
-*/
+    /*
+    print "<pre>";
+    print_r($twit);
+    print "</pre>";
+    */
 //echo "<br>";
 
-$count = 1;
-?>
-<div id="slide" class="container">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class=img_fluid" src="./images/pic.jpg">
-                <div class="carousel-caption">
-                    <h1> <?php echo 'Recent tweets' ?></h1>
-                </div>
-            </div>
-            <?php
-            foreach ($twit as $value) {
-
-                if ($count > 10) {
-                    break;
-                } else {
-                    ?>
-                    <div class="carousel-item">
-                        <img class=img_fluid" src="./images/pic.jpg">
-                        <div class="carousel-caption">
-                            <h4> <?php echo $value->text ?></h4>
-                            <p>By: <?php echo $value->user->name ?> at : <?php echo $value->created_at ?></p>
-                        </div>
+    $count = 1;
+    ?>
+    <div id="slide" class="container">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class=img_fluid" src="./images/pic.jpg">
+                    <div class="carousel-caption">
+                        <h1> <?php echo 'Recent tweets' ?></h1>
                     </div>
-                    <?php
-                }
-                $count++;
-            };
-
-            ?>
-
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-</div>
-
-
-<?php
-echo '<br>' . '<br>';
-?>
-
-<div  class="row" style="background-color: inherit">
-    <div id="card1" class="col-md-4">
-        <div class="card text-white bg-secondary mb-3" style="width: 26rem;">
-            <img id="image_profile" class="card-img-top" src="<?php echo $user_profile_pic ?>" alt="Card image cap">
-                <p style="float: left;font-size: large" class="card-title">My tweets</p>
-            <ul class="list-group list-group-flush">
+                </div>
                 <?php
-                $count = 1;
-
                 foreach ($twit as $value) {
 
                     if ($count > 10) {
                         break;
                     } else {
-
-                        if ($value->user->id == $_SESSION['user_id']) {
-                            $count++;
-                            ?>
-                            <li class="list-group-item  bg-secondary"><?php echo $value->text.'<br>';  echo $value->created_at?></li>
-                            <?php
-                        }
+                        ?>
+                        <div class="carousel-item">
+                            <img class=img_fluid" src="./images/pic.jpg">
+                            <div class="carousel-caption">
+                                <h4> <?php echo $value->text ?></h4>
+                                <p>By: <?php echo $value->user->name ?> at : <?php echo $value->created_at ?></p>
+                            </div>
+                        </div>
+                        <?php
                     }
+                    $count++;
                 };
 
                 ?>
 
-            </ul>
-        </div>
-    </div>
-
-
-    <div id="card1" class="col-md-4">
-        <div class="card text-white bg-secondary mb-3" style="width: 26rem;">
-            <div class="card-body">
-                <h4 class="card-title">Followers tweets</h4>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-            <ul class="list-group list-group-flush">
-                <?php
-
-                $count = 1;
-                foreach ($twit as $value) {
-
-                    if ($count > 10) {
-                        break;
-                    } else {
-                        if ($value->user->id != $_SESSION['user_id']) {
-                            $count++;
-                            ?>
-                            <li class="list-group-item  bg-secondary">
-                                <?php
-                                echo $value->text . '<br>';
-                                echo $value->name . '<br>';
-                                echo $value->created_at . '<br>';
-                                ?>
-                            </li>
-                            <?php
-                        }
-
-                    }
-                };
-                ?>
-            </ul>
         </div>
     </div>
-</div>
 
 
-    <?php/*
-    $friend = (array)$client->followers_list();
-                //print "<pre>";
-                //print_r($friend);
-                //print "</pre>";
-                //$arr=array();
+    <?php
+    echo '<br>' . '<br>';
+    ?>
+
+    <div class="row" style="background-color: inherit">
+        <div id="card1" class="col-md-4">
+            <div class="card text-white bg-secondary mb-3" style="width: 26rem;">
+                <img id="image_profile" class="card-img-top" src="<?php echo $user_profile_pic ?>" alt="Card image cap">
+                <div class="card-body" style="float: left">
+                    <h4 class="card-title">My tweets</h4>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <?php
+                    $count = 1;
+
+                    foreach ($twit as $value) {
+
+                        if ($count > 10) {
+                            break;
+                        } else {
+
+                            if ($value->user->id == $_SESSION['user_id']) {
+                                $count++;
+                                ?>
+                                <li class="list-group-item  bg-secondary"><?php echo $value->text . '<br>';
+                                    echo $value->created_at ?></li>
+                                <?php
+                            }
+                        }
+                    };
+
+                    ?>
+
+                </ul>
+            </div>
+        </div>
+
+
+        <div id="card1" class="col-md-4">
+            <div class="card text-white bg-secondary mb-3" style="width: 26rem;">
+                <div class="card-body">
+                    <h4 class="card-title">Followers tweets</h4>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <?php
+
+                    $count = 1;
+                    foreach ($twit as $value) {
+
+                        if ($count > 10) {
+                            break;
+                        } else {
+                            if ($value->user->id != $_SESSION['user_id']) {
+                                $count++;
+                                ?>
+                                <li class="list-group-item  bg-secondary">
+                                    <?php
+                                    echo $value->text . '<br>';
+                                    echo $value->name . '<br>';
+                                    echo $value->created_at . '<br>';
+                                    ?>
+                                </li>
+                                <?php
+                            }
+
+                        }
+                    };
+                    ?>
+                </ul>
+            </div>
+        </div>
+
+        <div id="card1" class="col-md-4">
+            <div class="card text-white bg-secondary mb-3" style="width: 26rem;">
+                <?php
                 $count = 0;
                 foreach ($friend as $row => $innerArray) {
                     foreach ($innerArray as $innerRow => $value) {
                         if ($count > 10) {
                             break;
                         } else {
-                            echo $value->name . "<br>";
+                            ?>
+                            <img id="image_profile" class="card-img-top" src="<?php echo $value->profile_image_url ?>"
+                                 alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title"><?php echo $value->name ?></h4>
+                                <h2 class="card-title"><?php echo $value->screen_name ?></h2>
+                            </div>
+                            <?php
                         }
 
                     };
                 };
-                //print_r($arr);*/
                 ?>
-
-                <?php else : ?>
-                <div id="twit" class="fa fa-twitter">
-                    <br><br>
-                    <a id="link" href="<?php echo $auth->getAuthUrl(); ?>">Sign In</a>
-                </div>
+            </div>
         </div>
-        <?php endif; ?>
+
+    </div>
+
+<?php else : ?>
+    <div id="twit" class="fa fa-twitter">
+        <br><br>
+        <a id="link" href="<?php echo $auth->getAuthUrl(); ?>">Sign In</a>
+    </div>
+    </div>
+<?php endif; ?>
 
 

@@ -29,6 +29,7 @@
 #image_profile{
     width: 100px;
     height: 100px;
+    align-self: center;
 }
 #card1{
     max-height: 650px;
