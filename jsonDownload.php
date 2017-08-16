@@ -4,10 +4,8 @@
 require_once './app/init.php';
 $auth = new auth($client);
 $headerText = "Twiter Login";
-    $userid = $auth->getUserId();
-    $username = $auth->getUserName();
-    $tweets = $auth->getHomeTimeline();
-    $filename = $userid.'.json';
+    $tweets = $auth->statuses_homeTimeline();
+    $filename = $_SESSION['user-id'].'.json';
     header("Content-type: text/json");
     header("Content-Disposition: attachment; filename=$filename");
 
