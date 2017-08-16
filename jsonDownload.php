@@ -2,14 +2,14 @@
 <?php
 
 require_once './app/init.php';
-$auth = new auth($client);
+$client->setToken($_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
+$twit = (array)$client->statuses_homeTimeline();
 $headerText = "Twiter Login";
-    $tweets = $auth->statuses_homeTimeline();
     $filename = $_SESSION['user-id'].'.json';
     header("Content-type: text/json");
     header("Content-Disposition: attachment; filename=$filename");
 
-echo print_r($tweets, true);
+echo print_r($twits, true);
 
 /**
  * Created by PhpStorm.
