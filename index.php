@@ -121,20 +121,9 @@ $auth = new auth($client);
     <?php
     echo '<br>' . '<br>';
     ?>
-
-    <div id="container"></div>
-    <script>
-        var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(<?php print_r($twit)?>));
-
-        var a = document.createElement('a');
-        a.href = 'data:' + data;
-        a.download = 'data.json';
-        a.innerHTML = 'download JSON';
-
-        var container = document.getElementById('container');
-        container.appendChild(a);
-    </script>
-
+    <div class="container">
+        <a href="jsonDownload.php"> Download Tweets as CSV</a>
+    </div>
     <?php
     echo '<br>' . '<br>';
     ?>
