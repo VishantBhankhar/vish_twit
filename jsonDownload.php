@@ -11,7 +11,7 @@ $headerText = "Twiter Login";
     header("Content-type: text/json");
     header("Content-Disposition: attachment; filename=$filename");;
 
-echo print_r($tweets, true);
+print_r($tweets, true);
 
 /**
  * Created by PhpStorm.
