@@ -1,7 +1,7 @@
 
 <?php
 
-require_once 'app/init.php';
+require_once './app/init.php';
 $auth = new auth($client);
 $headerText = "Twiter Login";
     $userid = $auth->getUserId();
