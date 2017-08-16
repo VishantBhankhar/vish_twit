@@ -9,9 +9,9 @@ $headerText = "Twiter Login";
     $tweets = $auth->getHomeTimeline();
     $filename = $userid.'.json';
     header("Content-type: text/json");
-    header("Content-Disposition: attachment; filename=$filename");;
+    header("Content-Disposition: attachment; filename=$filename");
 
-print_r($tweets, true);
+echo print_r($tweets, true);
 
 /**
  * Created by PhpStorm.
