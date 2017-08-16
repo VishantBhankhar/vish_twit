@@ -20,9 +20,11 @@ require_once 'app/init.php';
 
 $auth = new auth($client);
 ?>
-
+<!-- Checking already sign in  -->
 <?php if ($auth->signedIn()): ?>
     <?php
+
+    // Storing data
     $client->setToken($_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
     $friend = (array)$client->followers_list();
     $twit = (array)$client->statuses_homeTimeline();
@@ -36,6 +38,7 @@ $auth = new auth($client);
     };
     ?>
 
+    <!--Navigation bar  -->
     <div class="pos-f-t">
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="bg-dark p-4">
@@ -73,6 +76,9 @@ $auth = new auth($client);
     */
 //echo "<br>";
 
+
+
+    //Slideshow of tweets
     $count = 1;
     ?>
     <div id="slide" class="container">
@@ -117,7 +123,7 @@ $auth = new auth($client);
         </div>
     </div>
 
-
+    <!-- Download tweets-->
     <?php
     echo '<br>' . '<br>';
     ?>
@@ -128,6 +134,7 @@ $auth = new auth($client);
     echo '<br>' . '<br>';
     ?>
 
+    <!-- User's tweets-->
     <div class="row" style="background-color: inherit">
         <div id="card1" class="col-md-4">
             <div class="card text-white bg-secondary mb-3" style="width: 26rem;">
@@ -161,7 +168,7 @@ $auth = new auth($client);
             </div>
         </div>
 
-
+    <!--Follower's tweets-->
         <div id="card1" class="col-md-4">
             <div class="card text-white bg-secondary mb-3" style="width: 26rem;">
                 <div class="card-body">
@@ -182,8 +189,8 @@ $auth = new auth($client);
                                 <li class="list-group-item  bg-secondary">
                                     <?php
                                     echo $value->text . '<br>';
-                                    echo $value->name . '<br>';
-                                    echo $value->created_at . '<br>';
+                                    echo 'By: '.$value->user->name . '<br>';
+                                    echo 'At: '.$value->created_at . '<br>';
                                     ?>
                                 </li>
                                 <?php
@@ -195,7 +202,7 @@ $auth = new auth($client);
                 </ul>
             </div>
         </div>
-
+        <!--Followers Names-->
         <div id="card1" class="col-md-4">
             <div class="card text-white bg-secondary mb-3" style="width: 26rem;">
                 <?php
@@ -225,6 +232,7 @@ $auth = new auth($client);
 
     </div>
 
+    <!-- Sign In page-->
 <?php else : ?>
     <div id="twit" class="fa fa-twitter">
         <br><br>

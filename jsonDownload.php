@@ -6,12 +6,12 @@ $auth = new auth($client);
 $headerText = "Twiter Login";
     $userid = $auth->getUserId();
     $username = $auth->getUserName();
-    $tweetsHome = $auth->getHomeTimeline();
+    $tweets = $auth->getHomeTimeline();
     $filename = $userid.'.json';
     header("Content-type: text/json");
     header("Content-Disposition: attachment; filename=$filename");;
 
-echo print_r($tweetsHome, true);
+echo print_r($tweets, true);
 
 /**
  * Created by PhpStorm.
