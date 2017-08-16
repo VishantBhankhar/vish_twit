@@ -5,11 +5,11 @@ require_once './app/init.php';
 $client->setToken($_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
 $twit = (array)$client->statuses_homeTimeline();
 $headerText = "Twiter Login";
-    $filename = $_SESSION['user-id'].'.json';
+$filename = $_SESSION['user-id'].'.json';
     header("Content-type: text/json");
     header("Content-Disposition: attachment; filename=$filename");
 
-echo print_r($twits, true);
+echo print_r($twit, true);
 
 /**
  * Created by PhpStorm.
