@@ -38,6 +38,10 @@
 #slidebackground{
     width: 100%;
 }
-#downloadbox1,#downloadbox2{
+#downloadbox1{
     width: 50%;
+}
+#downloadbox2{
+    width: 50%;
+    float: left;
 }

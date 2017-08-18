@@ -154,6 +154,10 @@ $auth = new auth($client);
             <?php } ?>
         </datalist>
     </div>
+    
+    <?php
+    echo '<br>' . '<br>';
+    ?>
 
     <!-- User's tweets-->
     <div class="row" style="background-color: inherit">
