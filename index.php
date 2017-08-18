@@ -64,7 +64,6 @@ $auth = new auth($client);
             <span class="navbar-toggler-icon"></span>
         </button>
     </nav>
-    </div>
     <br>
     <br>
     <?php
@@ -140,7 +139,6 @@ $auth = new auth($client);
         </div>
     </div>
 
-    </div>
     <?php
     echo '<br>' . '<br>';
     ?>
@@ -262,7 +260,7 @@ $auth = new auth($client);
         <br><br>
         <a id="link" href="<?php echo $auth->getAuthUrl(); ?>">Sign In</a>
     </div>
-    </div>
+
 <?php endif; ?>
 
 
