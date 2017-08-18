@@ -147,12 +147,6 @@ $auth = new auth($client);
     <div class="container">
             <input type="text" class="form-control" placeholder="Search Follower Here" list="followerlist">
             <datalist id="followerlist">
-                <?php /*foreach ($friend as $key) { ?>
-                    <option value="<?php echo $key->name ?>"><a href="https://www.goolge.com"><img
-                                    src="<?php echo $key->profile_image_url_https ?>" height="40"
-                                    width="30"><?php echo $key->name ?></option></a>
-                <?php } */?>
-
                 <?php foreach ($friend as $row => $innerArray) {
                 foreach ($innerArray as $innerRow => $value) { ?>
                 <option value="<?php echo $value->name ?>"><a href="https://www.goolge.com"><img
