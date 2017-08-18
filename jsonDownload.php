@@ -4,9 +4,9 @@
 require_once './app/init.php';
 $client->setToken($_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
 $twit = (array)$client->statuses_homeTimeline();
-$filename='jsonData';
+$filename='jsonData'.'json';
 $headerText = "Twiter Login";
-$filename = $_SESSION['user_id'].'.json';
+
     header("Content-type: text/json");
     header("Content-Disposition: attachment; filename=$filename");
 
