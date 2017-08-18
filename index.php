@@ -128,12 +128,12 @@ $auth = new auth($client);
     echo '<br>' . '<br>';
     ?>
     <div class="container">
-        <div id="donwloadbox1">
+        <div id="downloadbox1">
             <div class="alert alert-secondary" role="alert">
                 <a href="jsonDownload.php"> Download Tweets as Json</a>
             </div>
         </div>
-        <div id="donwloadbox2">
+        <div id="downloadbox2">
             <div class="alert alert-secondary" role="alert">
                 <a href="csvDownload.php"> Download Tweets as CSV</a>
             </div>
@@ -144,7 +144,7 @@ $auth = new auth($client);
     echo '<br>' . '<br>';
     ?>
     <!--Search Follower-->
-    <div style="float: none" class="row">
+    <div class="row">
         <input type="text" class="form-control" placeholder="Search Follower Here" list="followerlist">
         <datalist id="followerlist">
             <?php foreach ($friend as $key) { ?>
