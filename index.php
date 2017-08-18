@@ -128,8 +128,13 @@ $auth = new auth($client);
     echo '<br>' . '<br>';
     ?>
     <div class="container">
-        <a href="jsonDownload.php"> Download Tweets as Json</a>
-        <a href="csvDownload.php"> Download Tweets as CSV</a>
+        <div class="alert alert-secondary" role="alert">
+            <a href="jsonDownload.php"> Download Tweets as Json</a>
+        </div>
+        <div class="alert alert-secondary" role="alert">
+            <a href="csvDownload.php"> Download Tweets as CSV</a>
+        </div>
+
     </div>
     <?php
     echo '<br>' . '<br>';
