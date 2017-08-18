@@ -43,7 +43,7 @@ $auth = new auth($client);
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="bg-dark p-4">
                 <h4 class="text-white"><?php echo $user_name ?></h4>
-                <img src="<?php echo $user_profile_pic?>">
+                <img src="<?php echo $user_profile_pic ?>">
                 <span class="text-muted"><?php echo $user_screen_name ?>
 
                     <span class="dropdown">
@@ -77,7 +77,6 @@ $auth = new auth($client);
     print "</pre>";
     */
 //echo "<br>";
-
 
 
     //Slideshow of tweets
@@ -135,11 +134,11 @@ $auth = new auth($client);
                 <a href="jsonDownload.php"> Download Tweets as Json</a>
             </div>
         </div>
-        <div  id="donwloadbox2"
-            <div class="alert alert-secondary" role="alert">
-                <a href="csvDownload.php"> Download Tweets as CSV</a>
-            </div>
+        <div id="donwloadbox2"
+        <div class="alert alert-secondary" role="alert">
+            <a href="csvDownload.php"> Download Tweets as CSV</a>
         </div>
+    </div>
 
     </div>
     <?php
@@ -147,19 +146,14 @@ $auth = new auth($client);
     ?>
     <!--Search Follower-->
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <fieldset>
-                <legend class="bg-inverse text-white"><?php echo $screenname ?>'s Search Followers</legend>
-                <input type="text" class="form-control" placeholder="Enter user name" list="followerlist">
-                <datalist id="followerlist">
-                    <?php foreach ($followers as $key) { ?>
-                        <option value="<?php echo $key->name ?>"><a href="https://www.goolge.com"><img
-                                        src="<?php echo $key->profile_image_url_https ?>" height="40"
-                                        width="30"><?php echo $key->name ?></option></a>
-                    <?php } ?>
-                </datalist>
-            </fieldset>
-        </div>
+        <input type="text" class="form-control" placeholder="Search Follower Here" list="followerlist">
+        <datalist id="followerlist">
+            <?php foreach ($friend as $key) { ?>
+                <option value="<?php echo $key->name ?>"><a href="https://www.goolge.com"><img
+                                src="<?php echo $key->profile_image_url_https ?>" height="40"
+                                width="30"><?php echo $key->name ?></option></a>
+            <?php } ?>
+        </datalist>
     </div>
 
     <!-- User's tweets-->
@@ -196,7 +190,7 @@ $auth = new auth($client);
             </div>
         </div>
 
-    <!--Follower's tweets-->
+        <!--Follower's tweets-->
         <div id="card1" class="col-md-4">
             <div class="card text-white bg-secondary mb-3" style="width: 26rem;">
                 <div class="card-body">
@@ -217,8 +211,8 @@ $auth = new auth($client);
                                 <li class="list-group-item  bg-secondary">
                                     <?php
                                     echo $value->text . '<br>';
-                                    echo 'By: '.$value->user->name . '<br>';
-                                    echo 'At: '.$value->created_at . '<br>';
+                                    echo 'By: ' . $value->user->name . '<br>';
+                                    echo 'At: ' . $value->created_at . '<br>';
                                     ?>
                                 </li>
                                 <?php
