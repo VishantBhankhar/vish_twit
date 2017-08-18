@@ -154,7 +154,7 @@ $auth = new auth($client);
             <?php } ?>
         </datalist>
     </div>
-    
+
     <?php
     echo '<br>' . '<br>';
     ?>

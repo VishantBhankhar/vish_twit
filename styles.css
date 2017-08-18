@@ -40,8 +40,8 @@
 }
 #downloadbox1{
     width: 50%;
+    float: left;
 }
 #downloadbox2{
     width: 50%;
-    float: left;
 }
