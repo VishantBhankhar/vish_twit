@@ -44,6 +44,7 @@ $auth = new auth($client);
             <div class="bg-dark p-4">
                 <h4 class="text-white"><?php echo $user_name ?></h4>
                 <span class="text-muted"><?php echo $user_screen_name ?>
+                    <img src="<?php echo $user_profile_pic?>">
                     <span class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
