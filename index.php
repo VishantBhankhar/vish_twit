@@ -134,8 +134,9 @@ $auth = new auth($client);
             </div>
         </div>
         <div id="donwloadbox2"
-        <div class="alert alert-secondary" role="alert">
-            <a href="csvDownload.php"> Download Tweets as CSV</a>
+            <div class="alert alert-secondary" role="alert">
+                <a href="csvDownload.php"> Download Tweets as CSV</a>
+            </div>
         </div>
     </div>
 
