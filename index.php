@@ -43,8 +43,9 @@ $auth = new auth($client);
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="bg-dark p-4">
                 <h4 class="text-white"><?php echo $user_name ?></h4>
+                <img src="<?php echo $user_profile_pic?>">
                 <span class="text-muted"><?php echo $user_screen_name ?>
-                    <img src="<?php echo $user_profile_pic?>">
+
                     <span class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -86,7 +87,7 @@ $auth = new auth($client);
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class=img_fluid" src="./images/pic.jpg">
+                    <img id="slidebackground" class=img_fluid" src="./images/pic.jpg">
                     <div class="carousel-caption">
                         <h1> <?php echo 'Recent tweets' ?></h1>
                     </div>

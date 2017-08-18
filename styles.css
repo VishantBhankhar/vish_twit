@@ -35,3 +35,6 @@
     max-height: 650px;
     overflow: scroll;
 }
+#slidebackground{
+    width: 100%;
+}
