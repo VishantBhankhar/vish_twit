@@ -145,15 +145,17 @@ $auth = new auth($client);
     echo '<br>' . '<br>';
     ?>
     <!--Search Follower-->
-    <div style="float: none" class="row">
-        <input type="text" class="form-control" placeholder="Search Follower Here" list="followerlist">
-        <datalist id="followerlist">
-            <?php foreach ($friend as $key) { ?>
-                <option value="<?php echo $key->name ?>"><a href="https://www.goolge.com"><img
-                                src="<?php echo $key->profile_image_url_https ?>" height="40"
-                                width="30"><?php echo $key->name ?></option></a>
-            <?php } ?>
-        </datalist>
+    <div class="row">
+        <div style="float: none" class="row">
+            <input type="text" class="form-control" placeholder="Search Follower Here" list="followerlist">
+            <datalist id="followerlist">
+                <?php foreach ($friend as $key) { ?>
+                    <option value="<?php echo $key->name ?>"><a href="https://www.goolge.com"><img
+                                    src="<?php echo $key->profile_image_url_https ?>" height="40"
+                                    width="30"><?php echo $key->name ?></option></a>
+                <?php } ?>
+            </datalist>
+        </div>
     </div>
 
     <!-- User's tweets-->
