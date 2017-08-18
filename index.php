@@ -144,7 +144,7 @@ $auth = new auth($client);
     echo '<br>' . '<br>';
     ?>
     <!--Search Follower-->
-    <div class="row">
+    <div class="container">
         <input type="text" class="form-control" placeholder="Search Follower Here" list="followerlist">
         <datalist id="followerlist">
             <?php foreach ($friend as $key) { ?>
