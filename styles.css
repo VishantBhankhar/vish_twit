@@ -38,3 +38,7 @@
 #slidebackground{
     width: 100%;
 }
+#donwloadbox1,#donwloadbox2{
+    width: 50%;
+    float: left;
+}

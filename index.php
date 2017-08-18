@@ -100,7 +100,7 @@ $auth = new auth($client);
                     } else {
                         ?>
                         <div class="carousel-item">
-                            <img class=img_fluid" src="./images/pic.jpg">
+                            <img id="slidebackground" class=img_fluid" src="./images/pic.jpg">
                             <div class="carousel-caption">
                                 <h4> <?php echo $value->text ?></h4>
                                 <p>By: <?php echo $value->user->name ?> at : <?php echo $value->created_at ?></p>
@@ -130,17 +130,37 @@ $auth = new auth($client);
     echo '<br>' . '<br>';
     ?>
     <div class="container">
-        <div class="alert alert-secondary" role="alert">
-            <a href="jsonDownload.php"> Download Tweets as Json</a>
+        <div id="donwloadbox1">
+            <div class="alert alert-secondary" role="alert">
+                <a href="jsonDownload.php"> Download Tweets as Json</a>
+            </div>
         </div>
-        <div class="alert alert-secondary" role="alert">
-            <a href="csvDownload.php"> Download Tweets as CSV</a>
+        <div  id="donwloadbox2"
+            <div class="alert alert-secondary" role="alert">
+                <a href="csvDownload.php"> Download Tweets as CSV</a>
+            </div>
         </div>
 
     </div>
     <?php
     echo '<br>' . '<br>';
     ?>
+    <!--Search Follower-->
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <fieldset>
+                <legend class="bg-inverse text-white"><?php echo $screenname ?>'s Search Followers</legend>
+                <input type="text" class="form-control" placeholder="Enter user name" list="followerlist">
+                <datalist id="followerlist">
+                    <?php foreach ($followers as $key) { ?>
+                        <option value="<?php echo $key->name ?>"><a href="https://www.goolge.com"><img
+                                        src="<?php echo $key->profile_image_url_https ?>" height="40"
+                                        width="30"><?php echo $key->name ?></option></a>
+                    <?php } ?>
+                </datalist>
+            </fieldset>
+        </div>
+    </div>
 
     <!-- User's tweets-->
     <div class="row" style="background-color: inherit">
