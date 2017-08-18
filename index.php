@@ -133,7 +133,7 @@ $auth = new auth($client);
                 <a href="jsonDownload.php"> Download Tweets as Json</a>
             </div>
         </div>
-        <div id="donwloadbox2"
+        <div id="donwloadbox2">
             <div class="alert alert-secondary" role="alert">
                 <a href="csvDownload.php"> Download Tweets as CSV</a>
             </div>
