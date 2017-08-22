@@ -178,6 +178,10 @@ $auth = new auth($client);
                     $name = $_POST['searchname'];
                     ?>
                 </form>
+                <br>
+                <div class="alert alert-secondary" role="alert">
+                    <a href="jsonDownload.php"> Download Tweets as Json</a>
+                </div>
             </div>
 
 
@@ -187,7 +191,7 @@ $auth = new auth($client);
                 $tweets = (array)$client->statuses_userTimeline('screen_name=' . $name);
                 ?>
 
-                <div id="card1" class="col-md-4">
+                <div id="card2" class="col-md-4">
                     <div class="card text-white bg-secondary mb-3" style="width: 22rem;">
                         <div class="card-body">
                             <h4 class="card-title"><?php echo $name ?>'s tweets</h4>
