@@ -166,11 +166,13 @@ $auth = new auth($client);
 
     <!--Find Any Person-->
     <div class="container">
-        <input type="text" name="searchname" class="form-control" placeholder="Search Anyone Here">
-        <button class="btn btn-primary" onclick="<?php $searchname=$_POST['username']?>">Go</button>
-        <?php $name=$_GET['searchname'];
-                echo $name;
-        ?>
+        <form method="post" action="index.php">
+            <input type="text" name="searchname" class="form-control" placeholder="Search Anyone Here">
+            <button type="submit" class="btn btn-primary">Go</button>
+            <?php $name=$_POST['searchname'];
+            echo $name;
+            ?>
+        </form>
     </div>
 
     <?php
