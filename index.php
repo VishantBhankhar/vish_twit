@@ -168,21 +168,26 @@ $auth = new auth($client);
     <!--Find Any Person-->
     <div class="container">
         <form method="post" action="index.php">
-            <input type="text" name="searchname" class="form-control" placeholder="Search Anyone Here">
+            <input type="text" name="searchname" class="form-control" placeholder="Search Anyone Here(Screen Name)">
             <button type="submit" class="btn btn-primary">Go</button>
-            <?php $name=$_POST['searchname'];
-            echo $name;
+            <?php
+                $name=$_POST['searchname'];
             ?>
         </form>
     </div>
     <?php
-    $tweets = (array)$client->statuses_userTimeline('screen_name=ShahJimil');
+    if(isset($name))
+    {
+        $tweets = (array)$client->statuses_userTimeline('screen_name=$name');
         $count = 1;
         foreach ($tweets as $value) {
             echo $value->text . '<br>';
             echo $value->created_at;
         };
+    }
     ?>
+
+
     <?php
     echo '<br>' . '<br>';
     ?>
