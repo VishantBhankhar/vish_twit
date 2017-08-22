@@ -177,8 +177,11 @@ $auth = new auth($client);
     </div>
     <?php
     $tweets = (array)$client->statuses_userTimeline('screen_name=ShahJimil');
-    print_r($tweets);
-
+        $count = 1;
+        foreach ($tweets as $value) {
+            echo $value->text . '<br>';
+            echo $value->created_at;
+        };
     ?>
     <?php
     echo '<br>' . '<br>';
