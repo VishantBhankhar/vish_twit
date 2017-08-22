@@ -198,9 +198,12 @@ $auth = new auth($client);
                         </div>
                         <ul class="list-group list-group-flush">
                             <?php
-                            if(isset($tweets))
-                            {
+                                $count=1;
                                 foreach ($tweets as $value) {
+                                    if($count=1 && !isset($value->text)) {
+                                        echo 'User doesn\'t exists.';
+                                        break;
+                                    }
                                     if (isset($value->text)) {
                                         ?>
                                         <li class="list-group-item  bg-secondary">
@@ -213,10 +216,8 @@ $auth = new auth($client);
                                     } else {
                                         break;
                                     }
+                                    $count++;
                                 };
-                            }
-                            else{
-                                echo 'User doesn\'t exists';
                             }
                             ?>
                         </ul>
