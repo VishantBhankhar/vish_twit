@@ -176,7 +176,7 @@ $auth = new auth($client);
         </form>
     </div>
     <?php
-    $tweets = (array)$client->users_show('mlkptl35');
+    $tweets = (array)$client->users_show('1655689393','ShahJimil');
     print_r($tweets);
 
     ?>
