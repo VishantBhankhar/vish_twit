@@ -166,7 +166,7 @@ $auth = new auth($client);
 
 
     <!--Find Any Person-->
-    <div class="row">
+    <div class="container">
         <div class="col-md-4">
             <form method="post" action="index.php">
                 <input type="text" name="searchname" class="form-control" placeholder="Search Anyone Here(Screen Name)">
