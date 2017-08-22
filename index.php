@@ -171,6 +171,7 @@ $auth = new auth($client);
             <div class="col-md-4">
                 <form method="post" action="index.php">
                     <input type="text" name="searchname" class="form-control" placeholder="Search Anyone Here(Screen Name)">
+                    <br>
                     <button type="submit" class="btn btn-primary">Go</button>
                     <?php
                     $name = $_POST['searchname'];
@@ -193,14 +194,23 @@ $auth = new auth($client);
                         <ul class="list-group list-group-flush">
                             <?php
                             foreach ($tweets as $value) {
+                                if(isset($value->text))
+                                {
                                 ?>
-                                <li class="list-group-item  bg-secondary">
+                                    <li class="list-group-item  bg-secondary">
                                     <?php
                                     echo $value->text . '<br>';
                                     echo 'At: ' . $value->created_at . '<br>';
                                     ?>
-                                </li>
-                                <?php
+                                    </li>
+                                    <?php
+                                }
+                                else{
+                                    break;
+                                }
+                            }
+                                ?>
+
                             };
                             ?>
                         </ul>
