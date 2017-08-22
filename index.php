@@ -180,7 +180,7 @@ $auth = new auth($client);
                 </form>
                 <br>
                 <div class="alert alert-secondary" role="alert">
-                    <a href="jsonDownload.php"> Download Tweets as Json</a>
+                    <a href="jsonDownload.php"> Download Tweets as PDF</a>
                 </div>
             </div>
 
@@ -200,7 +200,7 @@ $auth = new auth($client);
                             <?php
                                 $count=1;
                                 foreach ($tweets as $value) {
-                                    if($count=1 && !isset($value->text)) {
+                                    if($count==1 && !isset($value->text)) {
                                         echo 'User doesn\'t exists.';
                                         break;
                                     }
