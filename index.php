@@ -175,7 +175,7 @@ $auth = new auth($client);
         </form>
     </div>
     <?php
-    $tweets = $auth->statuses_user_timeline();
+    $tweets = $auth->statuses_userTimeline();
     foreach ($tweets as $tweet) {
     echo '<p>'.$tweet->text.'<br>Posted on: <a href="https://twitter.com/'.$tweet->user->screen_name.'/status/'.$tweet->id.'">'.date('Y-m-d H:i', strtotime($tweet->created_at)).'</a></p>';
     }
