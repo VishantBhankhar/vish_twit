@@ -71,11 +71,11 @@ $auth = new auth($client);
 // $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
 
 //echo $_SESSION['user_id'];
-/*
-    print "<pre>";
-    print_r($twit);
-    print "</pre>";
-*/
+    /*
+        print "<pre>";
+        print_r($twit);
+        print "</pre>";
+    */
 //echo "<br>";
 
 
@@ -146,18 +146,18 @@ $auth = new auth($client);
     ?>
     <!--Search Follower-->
     <div class="container">
-            <input type="text" class="form-control" placeholder="Search Follower Here" list="followerlist">
-            <datalist id="followerlist">
-                <?php foreach ($friend as $row => $innerArray) {
+        <input type="text" class="form-control" placeholder="Search Follower Here" list="followerlist">
+        <datalist id="followerlist">
+            <?php foreach ($friend as $row => $innerArray) {
                 foreach ($innerArray as $innerRow => $value) { ?>
-                <option value="<?php echo $value->name ?>"><a href="https://www.goolge.com"><img
+                    <option value="<?php echo $value->name ?>"><a href="https://www.goolge.com"><img
                                     src="<?php echo $value->profile_image_url_https ?>" height="40"
                                     width="30"><?php echo $value->name ?></option></a>
 
                 <?php };
                 break;
-                };  ?>
-            </datalist>
+            }; ?>
+        </datalist>
     </div>
 
     <?php
@@ -171,19 +171,43 @@ $auth = new auth($client);
             <input type="text" name="searchname" class="form-control" placeholder="Search Anyone Here(Screen Name)">
             <button type="submit" class="btn btn-primary">Go</button>
             <?php
-                $name=$_POST['searchname'];
+            $name = $_POST['searchname'];
             ?>
         </form>
     </div>
+
+
+    <!-- Searched Person's Tweets-->
     <?php
-    if(isset($name))
-    {
-        $tweets = (array)$client->statuses_userTimeline('screen_name='.$name);
-        $count = 1;
-        foreach ($tweets as $value) {
-            echo $value->text . '<br>';
-            echo $value->created_at;
-        };
+    if (isset($name)) {
+        $tweets = (array)$client->statuses_userTimeline('screen_name=' . $name);
+        ?>
+        <div class="row">
+            <div id="card1" class="col-md-4">
+                <div class="card text-white bg-secondary mb-3" style="width: 26rem;">
+                    <div class="card-body">
+                        <h4 class="card-title"><?php $name ?>'s tweets</h4>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <?php
+
+                        $count = 1;
+                        foreach ($tweets as $value) {
+                            ?>
+                            <li class="list-group-item  bg-secondary">
+                                <?php
+                                echo $value->text . '<br>';
+                                echo 'At: ' . $value->created_at . '<br>';
+                                ?>
+                            </li>
+                            <?php
+                        };
+                        ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <?php
     }
     ?>
 
