@@ -71,11 +71,11 @@ $auth = new auth($client);
 // $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
 
 //echo $_SESSION['user_id'];
-
+/*
     print "<pre>";
     print_r($twit);
     print "</pre>";
-
+*/
 //echo "<br>";
 
 
@@ -176,7 +176,7 @@ $auth = new auth($client);
         </form>
     </div>
     <?php
-    $tweets = (array)$client->users_show('1655689393','ShahJimil');
+    $tweets = (array)$client->users_show_SCREEN_NAME('ShahJimil');
     print_r($tweets);
 
     ?>
