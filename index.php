@@ -170,7 +170,8 @@ $auth = new auth($client);
         <div class="row">
             <div class="col-md-4">
                 <form method="post" action="index.php">
-                    <input type="text" name="searchname" class="form-control" placeholder="Search Anyone Here(Screen Name)">
+                    <input type="text" name="searchname" class="form-control"
+                           placeholder="Search Anyone Here(Screen Name)">
                     <br>
                     <button type="submit" class="btn btn-primary">Go</button>
                     <?php
@@ -187,30 +188,25 @@ $auth = new auth($client);
                 ?>
 
                 <div id="card1" class="col-md-4">
-                    <div class="card text-white bg-secondary mb-3" style="width: 26rem;">
+                    <div class="card text-white bg-secondary mb-3" style="width: 22rem;">
                         <div class="card-body">
                             <h4 class="card-title"><?php echo $name ?>'s tweets</h4>
                         </div>
                         <ul class="list-group list-group-flush">
                             <?php
                             foreach ($tweets as $value) {
-                                if(isset($value->text))
-                                {
-                                ?>
-                                    <li class="list-group-item  bg-secondary">
-                                    <?php
-                                    echo $value->text . '<br>';
-                                    echo 'At: ' . $value->created_at . '<br>';
+                                if (isset($value->text)) {
                                     ?>
+                                    <li class="list-group-item  bg-secondary">
+                                        <?php
+                                        echo $value->text . '<br>';
+                                        echo 'At: ' . $value->created_at . '<br>';
+                                        ?>
                                     </li>
                                     <?php
-                                }
-                                else{
+                                } else {
                                     break;
                                 }
-                            }
-                                ?>
-
                             };
                             ?>
                         </ul>
