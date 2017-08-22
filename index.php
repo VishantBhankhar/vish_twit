@@ -176,7 +176,7 @@ $auth = new auth($client);
         </form>
     </div>
     <?php
-    $tweets = (array)$client->users_show('screen_name=ShahJimil');
+    $tweets = (array)$client->statuses_userTimeline('screen_name=ShahJimil');
     print_r($tweets);
 
     ?>
