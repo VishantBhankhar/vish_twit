@@ -198,20 +198,26 @@ $auth = new auth($client);
                         </div>
                         <ul class="list-group list-group-flush">
                             <?php
-                            foreach ($tweets as $value) {
-                                if (isset($value->text)) {
-                                    ?>
-                                    <li class="list-group-item  bg-secondary">
-                                        <?php
-                                        echo $value->text . '<br>';
-                                        echo 'At: ' . $value->created_at . '<br>';
+                            if(isset($tweets))
+                            {
+                                foreach ($tweets as $value) {
+                                    if (isset($value->text)) {
                                         ?>
-                                    </li>
-                                    <?php
-                                } else {
-                                    break;
-                                }
-                            };
+                                        <li class="list-group-item  bg-secondary">
+                                            <?php
+                                            echo $value->text . '<br>';
+                                            echo 'At: ' . $value->created_at . '<br>';
+                                            ?>
+                                        </li>
+                                        <?php
+                                    } else {
+                                        break;
+                                    }
+                                };
+                            }
+                            else{
+                                echo 'User doesn\'t exists';
+                            }
                             ?>
                         </ul>
                     </div>
