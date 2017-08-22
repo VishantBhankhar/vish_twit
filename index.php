@@ -166,15 +166,16 @@ $auth = new auth($client);
 
 
     <!--Find Any Person-->
-    <div class="container">
-        <form method="post" action="index.php">
-            <input type="text" name="searchname" class="form-control" placeholder="Search Anyone Here(Screen Name)">
-            <button type="submit" class="btn btn-primary">Go</button>
-            <?php
-            $name = $_POST['searchname'];
-            ?>
-        </form>
-    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post" action="index.php">
+                <input type="text" name="searchname" class="form-control" placeholder="Search Anyone Here(Screen Name)">
+                <button type="submit" class="btn btn-primary">Go</button>
+                <?php
+                $name = $_POST['searchname'];
+                ?>
+            </form>
+        </div>
 
 
     <!-- Searched Person's Tweets-->
@@ -182,16 +183,14 @@ $auth = new auth($client);
     if (isset($name)) {
         $tweets = (array)$client->statuses_userTimeline('screen_name=' . $name);
         ?>
-        <div class="row">
+
             <div id="card1" class="col-md-4">
                 <div class="card text-white bg-secondary mb-3" style="width: 26rem;">
                     <div class="card-body">
-                        <h4 class="card-title"><?php $name ?>'s tweets</h4>
+                        <h4 class="card-title"><?php echo $name ?>'s tweets</h4>
                     </div>
                     <ul class="list-group list-group-flush">
                         <?php
-
-                        $count = 1;
                         foreach ($tweets as $value) {
                             ?>
                             <li class="list-group-item  bg-secondary">
@@ -206,11 +205,11 @@ $auth = new auth($client);
                     </ul>
                 </div>
             </div>
-        </div>
+
         <?php
     }
     ?>
-
+    </div>
 
     <?php
     echo '<br>' . '<br>';
