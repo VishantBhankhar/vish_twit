@@ -218,7 +218,6 @@ $auth = new auth($client);
                                     }
                                     $count++;
                                 };
-                            }
                             ?>
                         </ul>
                     </div>
