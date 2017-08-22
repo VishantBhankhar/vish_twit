@@ -26,7 +26,7 @@ $auth = new auth($client);
 
     // Storing data
     $client->setToken($_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
-    echo $_SESSION['oauth_token']."     ".$_SESSION['oauth_token_secret'];
+    //echo $_SESSION['oauth_token']."     ".$_SESSION['oauth_token_secret'];
     $friend = (array)$client->followers_list();
     $twit = (array)$client->statuses_homeTimeline();
     foreach ($twit as $value) {
@@ -176,7 +176,7 @@ $auth = new auth($client);
         </form>
     </div>
     <?php
-    $tweets = $auth->statuses_userTimeline();
+    $tweets = $client->statuses_userTimeline();
     foreach ($tweets as $tweet) {
     echo '<p>'.$tweet->text.'<br>Posted on: <a href="https://twitter.com/'.$tweet->user->screen_name.'/status/'.$tweet->id.'">'.date('Y-m-d H:i', strtotime($tweet->created_at)).'</a></p>';
     }
