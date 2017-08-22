@@ -71,11 +71,11 @@ $auth = new auth($client);
 // $client->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
 
 //echo $_SESSION['user_id'];
-    /*
+
     print "<pre>";
     print_r($twit);
     print "</pre>";
-    */
+
 //echo "<br>";
 
 
