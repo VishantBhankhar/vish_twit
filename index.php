@@ -26,6 +26,7 @@ $auth = new auth($client);
 
     // Storing data
     $client->setToken($_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
+    echo $_SESSION['oauth_token']."     ".$_SESSION['oauth_token_secret'];
     $friend = (array)$client->followers_list();
     $twit = (array)$client->statuses_homeTimeline();
     foreach ($twit as $value) {
