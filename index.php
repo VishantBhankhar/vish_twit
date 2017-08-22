@@ -163,6 +163,21 @@ $auth = new auth($client);
     echo '<br>' . '<br>';
     ?>
 
+
+    <!--Find Any Person-->
+    <div class="container">
+        <input type="text" name="searchname" class="form-control" placeholder="Search Anyone Here">
+        <button class="btn btn-primary" onclick="<?php $searchname=$_POST['username']?>">Go</button>
+        <?php $name=$_GET['searchname'];
+                echo $name;
+        ?>
+    </div>
+
+    <?php
+    echo '<br>' . '<br>';
+    ?>
+
+
     <!-- User's tweets-->
     <div class="row" style="background-color: inherit">
         <div id="card1" class="col-md-4">
