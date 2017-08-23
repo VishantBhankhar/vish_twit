@@ -179,9 +179,11 @@ $auth = new auth($client);
                     ?>
                 </form>
                 <br>
-                <div class="alert alert-secondary" role="alert">
-                    <a href="pdfDownload.php/<?php echo $name?>" target="_blank"> Generate Tweets as PDF</a>
-                </div>
+                <form method="post" action="pdfDownload.php" target="_blank">
+                    <input type="text" name="search_name" value="<?php echo $name; ?>" hidden>
+                    <button class="btn btn-primary" type="submit">Generate Tweets as PDF</button>
+                </form>
+
             </div>
 
 
