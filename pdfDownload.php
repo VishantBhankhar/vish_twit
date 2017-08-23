@@ -32,10 +32,11 @@ $pdf->Ln(15);
 $pdf->Image($personpic);
 $pdf->Write('','           Here is '.$personinfo.'\'s tweets.');
 $pdf->Ln(15);
-$pdf->Cell(40,10,'ID',1,0,'C');
-$pdf->Cell(110,10,'Tweet',1,0,'C');
-$pdf->Cell(40,10,'At',1,0,'C');
+$pdf->Cell(30,10,'ID',1,0,'C');
+$pdf->Cell(100,10,'Tweet',1,0,'C');
+$pdf->Cell(50,10,'At',1,0,'C');
 $pdf->Ln(10);
+$pdf->SetFont("Arial","I",8);
 foreach ($tweets as $value) {
     $pdf->Cell(40,10,$value->id,1,0,'C');
     $pdf->Cell(110,10,$value->text,1,0,'C');
