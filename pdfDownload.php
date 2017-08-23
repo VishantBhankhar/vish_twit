@@ -5,15 +5,23 @@ $searchname=$_POST['search_name'];
 $client->setToken($_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
 $username=(array)$client->users_lookup('user_id='.$_SESSION['user_id']);
 $personinfo=(array)$client->users_show('screen_name='.$searchname);
-/*
+print "<pre>";
+print_r($username);
+print "</pre>";
+
+echo '--------------------------------------------------------';
         print "<pre>";
         print_r($personinfo);
         print "</pre>";
-*/
+echo '--------------------------------------------------------';
+echo $username->name;
+echo $personinfo->name;
+
 $pdf=new FPDF();
 $pdf->AddPage();
 $pdf->SetFont("Arial","B",20);
 $pdf->Write('','Thank You '.$username->name.' for using my website.');
+$pdf->Ln();
 $pdf->SetFont("Arial","B",16);
 $pdf->Write('','Here is '.$personinfo->name.'\'s tweets.');
 $pdf->Output();
