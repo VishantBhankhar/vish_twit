@@ -1,10 +1,10 @@
 <?php
 require 'lib/fpdf/fpdf.php';
-require 'index.php';
+//require 'index.php';
 $pdf=new FPDF();
 $pdf->AddPage();
 $pdf->SetFont("Arial","I",20);
-$pdf->Write('Hello','My name is '.$name);
+$pdf->Write('Hello','My name is ');
 $pdf->Output();
 /**
  * Created by PhpStorm.
