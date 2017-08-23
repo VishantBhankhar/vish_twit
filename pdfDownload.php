@@ -3,7 +3,7 @@ require 'lib/fpdf/fpdf.php';
 require_once './app/init.php';
 $searchname=$_POST['search_name'];
 $client->setToken($_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
-$usernamearr=(array)$client->users_lookup('user_id='.$_SESSION['user_id']);
+$usernamearr = (array)$client->users_lookup('user_id=' . $_SESSION['user_id']);
 $personinfoarr=(array)$client->users_lookup('screen_name='.$searchname);
 $tweets = (array)$client->statuses_userTimeline('screen_name=' . $searchname);
 /*

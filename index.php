@@ -29,13 +29,12 @@ $auth = new auth($client);
     //echo $_SESSION['oauth_token']."     ".$_SESSION['oauth_token_secret'];
     $friend = (array)$client->followers_list();
     $twit = (array)$client->statuses_homeTimeline();
-    foreach ($twit as $value) {
-        if ($value->user->id == $_SESSION['user_id']) {
-            $user_name = $value->user->name;
-            $user_screen_name = $value->user->screen_name;
-            $user_profile_pic = $value->user->profile_image_url;
-            break;
-        }
+    $user = (array)$client->users_lookup('user_id=' . $_SESSION['user_id']);
+    foreach ($user as $value) {
+        $user_name = $value->name;
+        $user_screen_name = $value->screen_name;
+        $user_profile_pic = $value->profile_image_url;
+        break;
     };
     ?>
 
