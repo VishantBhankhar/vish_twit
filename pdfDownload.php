@@ -12,19 +12,22 @@ print "</pre>";
 */
 foreach ($usernamearr as $value) {
     $username=$value->name;
+    $userpic=$value->profile_image_url;
     break;
 };
 foreach ($personinfoarr as $value) {
     $personinfo=$value->name;
+    $personpic=$value->profile_image_url;
     break;
 };
 
 $pdf=new FPDF();
 $pdf->AddPage();
 $pdf->SetFont("Arial","B",20);
+$pdf->Image($userpic);
 $pdf->Write('','Thank You '.$username.' for using my website.');
-$pdf->Ln('',20);
 $pdf->SetFont("Arial","B",16);
+$pdf->Image($personpic);
 $pdf->Write('','Here is '.$personinfo.'\'s tweets.');
 $pdf->Output();
 /**
