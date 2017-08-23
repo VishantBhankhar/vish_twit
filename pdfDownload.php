@@ -31,9 +31,9 @@ $pdf->Ln(15);
 $pdf->Image($personpic);
 $pdf->Write('','           Here is '.$personinfo.'\'s tweets.');
 $pdf->Ln(15);
-$pdf->Cell(20,10,'ID',1,0,'C');
-$pdf->Cell(20,10,'Tweet',1,0,'C');
-$pdf->Cell(20,10,'At',1,0,'C');
+$pdf->Cell(40,10,'ID',1,0,'C');
+$pdf->Cell(100,10,'Tweet',1,0,'C');
+$pdf->Cell(40,10,'At',1,0,'C');
 $pdf->Output();
 /**
  * Created by PhpStorm.

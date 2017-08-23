@@ -51,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/pdfDownload.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="527">
-              <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+              <caret line="35" column="12" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -237,12 +237,12 @@
       <workItem from="1503232157646" duration="906000" />
       <workItem from="1503402253059" duration="659000" />
       <workItem from="1503403496490" duration="10949000" />
-      <workItem from="1503488184203" duration="10044000" />
+      <workItem from="1503488184203" duration="10162000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97120000" />
+    <option name="totallyTimeSpent" value="97238000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -677,7 +677,7 @@
     <entry file="file://$PROJECT_DIR$/pdfDownload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
-          <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+          <caret line="35" column="12" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
           <folding />
         </state>
       </provider>
