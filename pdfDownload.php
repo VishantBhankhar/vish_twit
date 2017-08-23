@@ -27,10 +27,13 @@ $pdf->SetFont("Arial","B",20);
 $pdf->Image($userpic);
 $pdf->Write('','          Thank You '.$username.'.');
 $pdf->SetFont("Arial","B",16);
-$pdf->Ln(20);
+$pdf->Ln(15);
 $pdf->Image($personpic);
 $pdf->Write('','           Here is '.$personinfo.'\'s tweets.');
-$pdf->Ln(20);
+$pdf->Ln(15);
+$pdf->Cell(20,10,'ID',1,0,'C');
+$pdf->Cell(20,10,'Tweet',1,0,'C');
+$pdf->Cell(20,10,'At',1,0,'C');
 $pdf->Output();
 /**
  * Created by PhpStorm.
