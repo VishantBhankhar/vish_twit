@@ -5,11 +5,11 @@ $searchname=$_POST['search_name'];
 $client->setToken($_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
 $username=(array)$client->users_lookup('user_id='.$_SESSION['user_id']);
 $personinfo=(array)$client->users_show('screen_name='.$searchname);
-
+/*
         print "<pre>";
         print_r($personinfo);
         print "</pre>";
-
+*/
 $pdf=new FPDF();
 $pdf->AddPage();
 $pdf->SetFont("Arial","B",20);
