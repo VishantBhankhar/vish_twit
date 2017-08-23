@@ -182,7 +182,7 @@ $auth = new auth($client);
                 <form method="post" action="pdfDownload.php" target="_blank">
                     <input type="text" name="search_name" value="<?php echo $name; ?>" hidden>
                     <?php
-                    if (isset($name)) {
+                    if (!isset($name)) {
                         ?>
                         <button class="btn btn-primary" type="submit" disabled>Generate Tweets as PDF</button>
                         <?php
