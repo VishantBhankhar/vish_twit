@@ -2,6 +2,7 @@
 require 'lib/fpdf/fpdf.php';
 $pdf=new FPDF();
 $pdf->AddPage();
+$pdf->SetFont("Arial","I",20);
 $pdf->Write('Hello','My name is Vishant');
 $pdf->Output();
 /**
