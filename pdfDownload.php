@@ -4,8 +4,7 @@ require 'index.php';
 $pdf=new FPDF();
 $pdf->AddPage();
 $pdf->SetFont("Arial","I",20);
-echo $name;
-$pdf->Write('Hello','My name is Vishant');
+$pdf->Write('Hello','My name is '.$name);
 $pdf->Output();
 /**
  * Created by PhpStorm.
