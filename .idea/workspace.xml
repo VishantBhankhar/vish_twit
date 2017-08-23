@@ -36,8 +36,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
-              <caret line="181" column="77" lean-forward="true" selection-start-line="181" selection-start-column="77" selection-end-line="181" selection-end-column="77" />
+            <state relative-caret-position="476">
+              <caret line="39" column="6" lean-forward="true" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
               <folding>
                 <marker date="1503502661954" expanded="true" signature="8203:8412" ph="..." />
                 <marker date="1503502661954" expanded="true" signature="8293:8412" ph="..." />
@@ -50,8 +50,8 @@
       <file leaf-file-name="pdfDownload.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pdfDownload.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+            <state relative-caret-position="561">
+              <caret line="33" column="3" lean-forward="true" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -237,12 +237,12 @@
       <workItem from="1503232157646" duration="906000" />
       <workItem from="1503402253059" duration="659000" />
       <workItem from="1503403496490" duration="10949000" />
-      <workItem from="1503488184203" duration="7442000" />
+      <workItem from="1503488184203" duration="7895000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94518000" />
+    <option name="totallyTimeSpent" value="94971000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -654,18 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="181" column="77" lean-forward="true" selection-start-line="181" selection-start-column="77" selection-end-line="181" selection-end-column="77" />
-          <folding>
-            <marker date="1503502661954" expanded="true" signature="8203:8412" ph="..." />
-            <marker date="1503502661954" expanded="true" signature="8293:8412" ph="..." />
-            <marker date="1503502661954" expanded="true" signature="8341:8412" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/classes/auth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="617">
@@ -674,10 +662,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="39" column="6" lean-forward="true" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
+          <folding>
+            <marker date="1503502661954" expanded="true" signature="8203:8412" ph="..." />
+            <marker date="1503502661954" expanded="true" signature="8293:8412" ph="..." />
+            <marker date="1503502661954" expanded="true" signature="8341:8412" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pdfDownload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        <state relative-caret-position="561">
+          <caret line="33" column="3" lean-forward="true" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
           <folding />
         </state>
       </provider>

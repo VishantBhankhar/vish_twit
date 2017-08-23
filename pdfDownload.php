@@ -3,19 +3,20 @@ require 'lib/fpdf/fpdf.php';
 require_once './app/init.php';
 $searchname=$_POST['search_name'];
 $client->setToken($_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
-$username=(array)$client->users_lookup('user_id='.$_SESSION['user_id']);
+$usernamearr=(array)$client->users_lookup('user_id='.$_SESSION['user_id']);
 $personinfo=(array)$client->users_show('screen_name='.$searchname);
 print "<pre>";
-print_r($username);
+print_r($usernamearr);
 print "</pre>";
 
-echo '--------------------------------------------------------';
-        print "<pre>";
-        print_r($personinfo);
-        print "</pre>";
-echo '--------------------------------------------------------';
+foreach ($usernamearr as $value) {
+    $username=$value->name;
+    break;
+};
+
+
 echo $username->name;
-echo $personinfo->name;
+
 
 $pdf=new FPDF();
 $pdf->AddPage();
