@@ -1,6 +1,7 @@
 <?php
 require 'lib/fpdf/fpdf.php';
-require 'index.php';
+require_once './app/init.php';
+$client->setToken($_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
 $pdf=new FPDF();
 $pdf->AddPage();
 $pdf->SetFont("Arial","I",20);
