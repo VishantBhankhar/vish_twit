@@ -39,10 +39,10 @@ $pdf->Ln(10);
 $pdf->SetFont("Arial","I",8);
 foreach ($tweets as $value) {
     if(isset($value->text)){
-        $pdf->Cell(40,10,$value->id,1,0,'C');
-        $pdf->Cell(100,10,$value->text,1,0,'C');
-        $pdf->Cell(50,10,$value->created_at,1,0,'C');
-        $pdf->Ln(10);
+        $pdf->Cell(40,16,$value->id,1,0,'C');
+        $pdf->Cell(100,16,$value->text,1,0,'C');
+        $pdf->Cell(50,16,$value->created_at,1,0,'C');
+        $pdf->Ln(16);
     }
     else break;
 };
