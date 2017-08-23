@@ -181,7 +181,18 @@ $auth = new auth($client);
                 <br>
                 <form method="post" action="pdfDownload.php" target="_blank">
                     <input type="text" name="search_name" value="<?php echo $name; ?>" hidden>
-                    <button class="btn btn-primary" type="submit">Generate Tweets as PDF</button>
+                    <?php
+                    if (isset($name)) {
+                        ?>
+                        <button class="btn btn-primary" type="submit" disabled>Generate Tweets as PDF</button>
+                        <?php
+                    } else {
+                        ?>
+                        <button class="btn btn-primary" type="submit">Generate Tweets as PDF</button>
+                        <?php
+                    }
+                    ?>
+
                 </form>
 
             </div>
@@ -200,26 +211,26 @@ $auth = new auth($client);
                         </div>
                         <ul class="list-group list-group-flush">
                             <?php
-                                $count=1;
-                                foreach ($tweets as $value) {
-                                    if($count==1 && !isset($value->text)) {
-                                        echo 'User doesn\'t exists.';
-                                        break;
-                                    }
-                                    if (isset($value->text)) {
-                                        ?>
-                                        <li class="list-group-item  bg-secondary">
-                                            <?php
-                                            echo $value->text . '<br>';
-                                            echo 'At: ' . $value->created_at . '<br>';
-                                            ?>
-                                        </li>
+                            $count = 1;
+                            foreach ($tweets as $value) {
+                                if ($count == 1 && !isset($value->text)) {
+                                    echo 'User doesn\'t exists.';
+                                    break;
+                                }
+                                if (isset($value->text)) {
+                                    ?>
+                                    <li class="list-group-item  bg-secondary">
                                         <?php
-                                    } else {
-                                        break;
-                                    }
-                                    $count++;
-                                };
+                                        echo $value->text . '<br>';
+                                        echo 'At: ' . $value->created_at . '<br>';
+                                        ?>
+                                    </li>
+                                    <?php
+                                } else {
+                                    break;
+                                }
+                                $count++;
+                            };
                             ?>
                         </ul>
                     </div>
