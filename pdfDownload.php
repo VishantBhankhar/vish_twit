@@ -23,7 +23,7 @@ $pdf=new FPDF();
 $pdf->AddPage();
 $pdf->SetFont("Arial","B",20);
 $pdf->Write('','Thank You '.$username.' for using my website.');
-$pdf->Ln();
+$pdf->Ln('',20);
 $pdf->SetFont("Arial","B",16);
 $pdf->Write('','Here is '.$personinfo.'\'s tweets.');
 $pdf->Output();
