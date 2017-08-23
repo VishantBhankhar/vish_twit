@@ -170,7 +170,7 @@ $auth = new auth($client);
             <div class="col-md-4">
                 <form method="post" action="index.php">
                     <input type="text" name="searchname" class="form-control"
-                           placeholder="Search Anyone Here(Screen Name)" required>
+                           placeholder="Search Anyone Here(Screen Name)" required="required">
                     <br>
                     <button type="submit" class="btn btn-primary">Go</button>
                     <?php
