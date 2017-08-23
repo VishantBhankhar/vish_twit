@@ -180,7 +180,7 @@ $auth = new auth($client);
                 </form>
                 <br>
                 <div class="alert alert-secondary" role="alert">
-                    <a href="pdfDownload.php"> Download Tweets as PDF</a>
+                    <a href="pdfDownload.php" target="_blank"> Generate Tweets as PDF</a>
                 </div>
             </div>
 
