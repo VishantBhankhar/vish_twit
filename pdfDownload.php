@@ -3,7 +3,7 @@ require 'lib/fpdf/fpdf.php';
 require_once './app/init.php';
 $searchname=$_POST['search_name'];
 $client->setToken($_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
-$personinfo=(array)$client->users_show('screen-name='.$searchname);
+$personinfo=(array)$client->users_show('screen_name='.$searchname);
 
         print "<pre>";
         print_r($personinfo);
