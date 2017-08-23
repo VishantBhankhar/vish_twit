@@ -25,11 +25,12 @@ $pdf=new FPDF();
 $pdf->AddPage();
 $pdf->SetFont("Arial","B",20);
 $pdf->Image($userpic);
-$pdf->Write('','      Thank You '.$username.'.');
+$pdf->Write('','          Thank You '.$username.'.');
 $pdf->SetFont("Arial","B",16);
-$pdf->Ln(40);
+$pdf->Ln(20);
 $pdf->Image($personpic);
-$pdf->Write('','Here is '.$personinfo.'\'s tweets.');
+$pdf->Write('','           Here is '.$personinfo.'\'s tweets.');
+$pdf->Ln(20);
 $pdf->Output();
 /**
  * Created by PhpStorm.
