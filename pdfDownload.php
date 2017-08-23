@@ -35,7 +35,7 @@ $pdf->Ln(15);
 $pdf->Cell(40,10,'ID',1,0,'C');
 $pdf->Cell(100,10,'Tweet',1,0,'C');
 $pdf->Cell(50,10,'At',1,0,'C');
-$pdf->Ln(10);
+$pdf->Ln(16);
 $pdf->SetFont("Arial","I",8);
 foreach ($tweets as $value) {
     if(isset($value->text)){
