@@ -149,10 +149,7 @@ $auth = new auth($client);
         <datalist id="followerlist">
             <?php foreach ($friend as $row => $innerArray) {
                 foreach ($innerArray as $innerRow => $value) { ?>
-                    <option value="<?php echo $value->name ?>"><a href="https://www.goolge.com"><img
-                                    src="<?php echo $value->profile_image_url_https ?>" height="40"
-                                    width="30"><?php echo $value->name ?></option></a>
-
+                    <option value="<?php echo $value->name ?>"></option>
                 <?php };
                 break;
             }; ?>
