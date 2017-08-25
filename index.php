@@ -200,7 +200,19 @@ $auth = new auth($client);
             <!-- Searched Person's Tweets-->
             <?php
             if (isset($name)) {
-                $tweets = (array)$client->statuses_userTimeline('screen_name=' . $name,200);
+
+
+                $tweets = (array)$client->statuses_userTimeline('screen_name=' . $name);
+                $cursor = $tweets->next_cursor_str;
+                while($cursor > 0){
+                    $params = [
+                        'cursor' => $cursor,
+                        'screen_name' => $name
+                    ];
+                    array_push($tweets,(array)$client->statuses_userTimeline($params));
+                    $cursor = $tweets->next_cursor_str;
+                }
+
                 print "<pre>";
                 print_r($tweets);
                 print "</pre>";
