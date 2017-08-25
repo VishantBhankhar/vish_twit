@@ -209,8 +209,9 @@ $auth = new auth($client);
                         'cursor' => $cursor,
                         'screen_name' => $name
                     ];
-                    array_push($tweets,(array)$client->statuses_userTimeline($params));
-                    $cursor = $tweets->next_cursor_str;
+                    $temp = (array)$client->statuses_userTimeline($params);
+                    array_push($tweets,$temp);
+                    $cursor = $temp->next_cursor_str;
                 }
 
                 print "<pre>";
