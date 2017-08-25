@@ -200,12 +200,15 @@ $auth = new auth($client);
             <!-- Searched Person's Tweets-->
             <?php
             if (isset($name)) {
-
+                $tweetc=0;
                 $ps = ['count' => 200,'screen_name' => $name ];
                 $tweets = $client->followers_list($ps);
                 $cursor = $tweets->next_cursor_str;
                 $tweets = (array)$tweets;
 
+                foreach ($tweets as $key){
+                    $count += 1;
+                }
                 echo "<h1 style='color: red;'> printed cursor : $cursor</h1>";
                 while($cursor > 0){
                     echo "<h1 style='color: red;'> printed cursor : $cursor</h1>";
@@ -216,6 +219,9 @@ $auth = new auth($client);
                     ];
                     $temp = $client->followers_list($params);
 
+                    foreach ($temp as $key){
+                        $count += 1;
+                    }
                     print "<pre>";
                     print_r($temp);
                     print "</pre>";
@@ -223,10 +229,8 @@ $auth = new auth($client);
                     $cursor = $temp->next_cursor_str;
                     $temp = (array)$temp;
                 }
+                echo "<h1 style='color: red;'> printed  : $tweetc</h1>";
 
-                print "<pre>";
-                print_r($tweets);
-                print "</pre>";
                 ?>
 
                 <div id="card2" class="col-md-4">
