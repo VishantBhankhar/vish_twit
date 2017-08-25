@@ -201,13 +201,14 @@ $auth = new auth($client);
             <?php
             if (isset($name)) {
 
-
-                $tweets = (array)$client->statuses_userTimeline('screen_name=' . $name);
+                $ps = ['count' => 200,'screen_name' => $name ];
+                $tweets = (array)$client->statuses_userTimeline($ps);
                 $cursor = $tweets->next_cursor_str;
                 while($cursor > 0){
                     $params = [
                         'cursor' => $cursor,
-                        'screen_name' => $name
+                        'screen_name' => $name,
+                        'count' => 200
                     ];
                     $temp = (array)$client->statuses_userTimeline($params);
                     print "<pre>";
