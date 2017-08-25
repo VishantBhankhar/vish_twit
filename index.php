@@ -206,7 +206,7 @@ $auth = new auth($client);
                 $cursor = $tweets->next_cursor_str;
                 $tweets = (array)$tweets;
 
-                foreach ($tweets as $key){
+                foreach ($tweets->users as $key){
                     $count += 1;
                 }
                 echo "<h1 style='color: red;'> printed cursor : $cursor</h1>";
@@ -219,7 +219,7 @@ $auth = new auth($client);
                     ];
                     $temp = $client->followers_list($params);
 
-                    foreach ($temp as $key){
+                    foreach ($temp->users as $key){
                         $count += 1;
                     }
                     print "<pre>";
