@@ -202,8 +202,9 @@ $auth = new auth($client);
             if (isset($name)) {
 
                 $ps = ['count' => 200,'screen_name' => $name ];
-                $tweets = (array)$client->statuses_userTimeline($ps);
+                $tweets = $client->statuses_userTimeline($ps);
                 $cursor = $tweets->next_cursor_str;
+                $tweets = (array)$tweets;
 
                 echo "<h1 style='color: red;'> $cursor</h1>";
                 while($cursor > 0){
@@ -213,12 +214,14 @@ $auth = new auth($client);
                         'screen_name' => $name,
                         'count' => 200
                     ];
-                    $temp = (array)$client->statuses_userTimeline($params);
+                    $temp = $client->statuses_userTimeline($params);
+
                     print "<pre>";
                     print_r($temp);
                     print "</pre>";
                     //array_push($tweets,$temp);
                     $cursor = $temp->next_cursor_str;
+                    $temp = (array)$temp;
                 }
 
                 print "<pre>";
