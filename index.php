@@ -201,6 +201,9 @@ $auth = new auth($client);
             <?php
             if (isset($name)) {
                 $tweets = (array)$client->statuses_userTimeline('screen_name=' . $name,200);
+                print "<pre>";
+                print_r($tweets);
+                print "</pre>";
                 ?>
 
                 <div id="card2" class="col-md-4">
