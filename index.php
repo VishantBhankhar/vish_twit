@@ -204,7 +204,10 @@ $auth = new auth($client);
                 $ps = ['count' => 200,'screen_name' => $name ];
                 $tweets = (array)$client->statuses_userTimeline($ps);
                 $cursor = $tweets->next_cursor_str;
+
+                echo "<h1 style='color: red;'> $cursor</h1>";
                 while($cursor > 0){
+                    echo "<h1 style='color: red;'> $cursor</h1>";
                     $params = [
                         'cursor' => $cursor,
                         'screen_name' => $name,
