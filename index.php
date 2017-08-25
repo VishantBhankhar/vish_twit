@@ -202,19 +202,19 @@ $auth = new auth($client);
             if (isset($name)) {
 
                 $ps = ['count' => 200,'screen_name' => $name ];
-                $tweets = $client->statuses_userTimeline($ps);
+                $tweets = $client->followers_list($ps);
                 $cursor = $tweets->next_cursor_str;
                 $tweets = (array)$tweets;
 
-                echo "<h1 style='color: red;'> $cursor</h1>";
+                echo "<h1 style='color: red;'> printed cursor : $cursor</h1>";
                 while($cursor > 0){
-                    echo "<h1 style='color: red;'> $cursor</h1>";
+                    echo "<h1 style='color: red;'> printed cursor : $cursor</h1>";
                     $params = [
                         'cursor' => $cursor,
                         'screen_name' => $name,
                         'count' => 200
                     ];
-                    $temp = $client->statuses_userTimeline($params);
+                    $temp = $client->followers_list($params);
 
                     print "<pre>";
                     print_r($temp);
