@@ -22,6 +22,7 @@ $auth = new auth($client);
 ?>
 <!-- Checking already sign in  -->
 <?php if ($auth->signedIn()): ?>
+
     <?php
 
     // Storing data
@@ -192,12 +193,14 @@ $auth = new auth($client);
                 </form>
 
             </div>
+            <!------------------------------------------>
+
 
 
             <!-- Searched Person's Tweets-->
             <?php
             if (isset($name)) {
-                $tweets = (array)$client->statuses_userTimeline('screen_name=' . $name);
+                $tweets = (array)$client->statuses_userTimeline('screen_name=' . $name,200);
                 ?>
 
                 <div id="card2" class="col-md-4">
@@ -341,6 +344,10 @@ $auth = new auth($client);
         </div>
 
     </div>
+
+
+
+
 
     <!-- Sign In page-->
 <?php else : ?>
