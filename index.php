@@ -145,7 +145,7 @@ $auth = new auth($client);
             {
                 $reply=$client->statuses_update($params);
             }
-            print_r($reply);
+            //print_r($reply);
          ?>
     
 
