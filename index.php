@@ -124,6 +124,19 @@ $auth = new auth($client);
         </div>
     </div>
 
+
+    <!-- Tweet on account-->
+    <div class="container">
+        <form method="post" action="index.php">
+            <input type="text" name="tweet" class="form-control" placeholder="What's there in your mind!!" required="required">
+            <br>
+             <button type="submit" class="btn btn-primary">Tweet</button>
+            <?php
+                $tweet = $_POST['searchname'];
+            ?>
+         </form>
+    </div>
+
     <!-- Download tweets-->
     <?php
     echo '<br>' . '<br>';
