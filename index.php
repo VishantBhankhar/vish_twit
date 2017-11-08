@@ -131,20 +131,20 @@ $auth = new auth($client);
             <input type="text" name="tweet" class="form-control"
                            placeholder="Whats there in your mind!!" required="required">
             <br>
-            <button type="submit" class="btn btn-primary">Tweet</button>
-                    <?php
-                    $tweet = $_POST['tweet'];
-                    ?>
+            <button type="submit" class="btn btn-primary">Tweet</button>       
          </form>
     </div>
+        <?php
+            $tweet = $_POST['tweet'];
+        ?>
          <?php
-         $params = [
-            'status' => $tweet
-        ];
-         if(isset($tweet))
-         {
-            $reply=$client->statuses_update($params);
-         }
+            $params = [
+                'status' => $tweet
+            ];
+            if(isset($tweet))
+            {
+                $reply=$client->statuses_update($params);
+            }
          ?>
     
 
