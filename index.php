@@ -136,6 +136,12 @@ $auth = new auth($client);
                     $tweet = $_POST['tweet'];
                     ?>
          </form>
+         <?php
+         if(isset($tweet))
+         {
+            statuses_update('status=$tweet');
+         }
+         ?>
     </div>
 
     <!-- Download tweets-->
