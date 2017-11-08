@@ -123,6 +123,21 @@ $auth = new auth($client);
         </div>
     </div>
 
+    <!-- Tweet -->
+    <br>
+    <br>
+    <div class="container">
+        <form method="post" action="index.php">
+            <input type="text" name="tweet" class="form-control"
+                           placeholder="Whats there in your mind!!" required="required">
+            <br>
+            <button type="submit" class="btn btn-primary">Tweet</button>
+                    <?php
+                    $tweet = $_POST['tweet'];
+                    ?>
+         </form>
+    </div>
+
     <!-- Download tweets-->
     <?php
     echo '<br>' . '<br>';
