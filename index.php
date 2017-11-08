@@ -138,9 +138,12 @@ $auth = new auth($client);
          </form>
     </div>
          <?php
+         $params = [
+            'status' => $tweet
+        ];
          if(isset($tweet))
          {
-            $client->statuses_update($tweet);
+            $reply=$client->statuses_update($params);
          }
          ?>
     
