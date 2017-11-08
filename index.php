@@ -140,7 +140,7 @@ $auth = new auth($client);
          <?php
          if(isset($tweet))
          {
-            $client->statuses_update('status=$tweet');
+            $client->statuses_update('status=Hello!!');
          }
          ?>
     
